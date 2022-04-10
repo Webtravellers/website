@@ -1,10 +1,11 @@
 import React from 'react'
 import { Button } from 'reactstrap';
+import Router from './routes/Router';
 
 const App = () => {
 	return (
 		<div className="App">
-			<Button color='primary'>Test</Button>
+			<Router />
 		</div>
 	);
 }
