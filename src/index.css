@@ -15,10 +15,30 @@ code {
 }
 
 
-.topheader {
-  background-color: aliceblue;
+.topnavbar {
+  background-color: #242424;
   position: sticky;
   top: 0;
-  box-shadow: 0px 5px 10px 1px #00000020;
   margin-bottom: 10px;
  }
+
+ .topnavbar .nav-link {
+   color: rgb(197, 197, 197)
+ }
+ 
+ .topnavbar .nav-link:hover {
+  color: rgb(119, 119, 119)
+}
+
+ .sidebar .nav-item {
+  padding: 10px 0px;
+  padding-left: 20px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  display: block !important;
+}
+
+.sidebar .nav-item.active {
+  background-color: #343434;
+}
