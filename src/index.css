@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#1411ad, #db86f0) no-repeat center center fixed;
 }
 
 code {
@@ -16,21 +17,21 @@ code {
 
 
 .topnavbar {
-  background-color: #242424;
+  background-color: #1411ad;
   position: sticky;
   top: 0;
   margin-bottom: 10px;
- }
-
- .topnavbar .nav-link {
-   color: rgb(197, 197, 197)
- }
- 
- .topnavbar .nav-link:hover {
-  color: rgb(119, 119, 119)
 }
 
- .sidebar .nav-item {
+.topnavbar .nav-link {
+  color: white
+}
+
+.topnavbar .nav-link:hover {
+  color: rgb(197, 197, 197)
+}
+
+.sidebar .nav-item {
   padding: 10px 0px;
   padding-left: 20px;
   color: white;
@@ -41,4 +42,36 @@ code {
 
 .sidebar .nav-item.active {
   background-color: #343434;
+}
+
+.select-language {
+  background-color: #1411ad !important;
+  color: white !important;
+  font-size: 10px !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.input-text-item {
+  color: black !important;
+  font-weight: bolder !important;
+  width: 100px;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.input-item {
+  padding-left: 10px !important;
+  border-radius: 50px !important;
+}
+
+
+.signup-header {
+  color: black !important;
+  background-color: transparent !important;
+}
+
+.socials {
+  position: absolute;
+  right: 0%;
 }

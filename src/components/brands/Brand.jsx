@@ -2,7 +2,7 @@ import React from 'react'
 
 const Brand = () => {
   return (
-    <h3 style={{color: "#c06cff"}}>Brand</h3>
+    <h3 style={{ color: "orange" }}>Brand</h3>
   )
 }
 
