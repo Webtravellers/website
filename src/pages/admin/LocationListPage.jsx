@@ -39,7 +39,7 @@ const LocationListPage = () => {
                                 <td>{location.name}</td>
                                 <td>{location.city.cityName}</td>
                                 <td>{location.type.map(t => t.name).toString()}</td>
-                                <td>{location.desc.slice(0, 50)}</td>
+                                <td>{location.desc?.slice(0, 50)}</td>
                                 <td>
                                     <UncontrolledDropdown nav>
                                         <DropdownToggle nav className="nav-link-icon">
@@ -50,7 +50,7 @@ const LocationListPage = () => {
                                             className="dropdown-menu-arrow"
                                             right
                                         >
-                                            <DropdownItem>Edit</DropdownItem>
+                                            <DropdownItem onClick={() => navigate("update/"+location._id)}>Update</DropdownItem>
                                             <DropdownItem divider />
                                             <DropdownItem>Change Status</DropdownItem>
                                         </DropdownMenu>
