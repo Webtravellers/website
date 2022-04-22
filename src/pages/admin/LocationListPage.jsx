@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router';
 import { Button, DropdownItem, DropdownMenu, DropdownToggle, Table, UncontrolledDropdown } from 'reactstrap'
 import LocationService from '../../services/locationService'
 
 const LocationListPage = () => {
+
+    let navigate = useNavigate();
+
     const [locations, setLocations] = useState([])
 
     useEffect(() => {
@@ -16,7 +20,7 @@ const LocationListPage = () => {
         <div>
             <h1>Location List</h1>
             <div className='mt-5 d-flex justify-content-end'>
-                <Button color='primary'>New Location</Button>
+                <Button color='primary' onClick={() => navigate("add")}>New Location</Button>
             </div>
             <div className='my-5'>
                 <Table>
