@@ -13,7 +13,7 @@ const AdminLayout = () => {
                 </Link>
                 <nav className="mt-5 d-block">
                     <ul className="p-0 m-0 text-left">
-                        <SidebarNavItem to="test-link" text="Test Item" />
+                        <SidebarNavItem to="locations" text="Location List" />
                     </ul>
                 </nav>
             </aside>
