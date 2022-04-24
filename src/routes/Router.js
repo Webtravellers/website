@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router'
 import BaseLayout from '../layouts/BaseLayout'
 import HomePage from '../pages/HomePage'
+import LocationPage from '../pages/LocationPage'
 
 const AdminRouter = React.lazy(() => import("./AdminRouter"))
 
@@ -10,6 +11,7 @@ const Router = () => {
         <Routes>
             <Route path='/' element={<BaseLayout />} >
                 <Route exact path='' element={<HomePage />} />
+                <Route exact path='location' element={<LocationPage />} />
             </Route>
             <Route path='dashboard/*' element={
                 <React.Suspense fallback={<p>...</p>}>
