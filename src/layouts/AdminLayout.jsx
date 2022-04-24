@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import { Container } from 'reactstrap'
 import Brand from "../components/brands/Brand"
 import SidebarNavItem from "../components/navbars/SidebarNavItem"
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 const AdminLayout = () => {
     return (
         <div className="dashboard">
@@ -14,6 +14,9 @@ const AdminLayout = () => {
                 <nav className="mt-5 d-block">
                     <ul className="p-0 m-0 text-left">
                         <SidebarNavItem to="locations" text="Location List" />
+                    </ul>
+                    <ul className="p-0 m-0 text-left">
+                        <SidebarNavItem to="users" text="Users List" />
                     </ul>
                 </nav>
             </aside>
