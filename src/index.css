@@ -70,7 +70,15 @@ code {
   color: #FF7426;
 }
 
- .sidebar .nav-item {
+.topnavbar .nav-link {
+  color: rgb(197, 197, 197)
+}
+
+.topnavbar .nav-link:hover {
+  color: rgb(119, 119, 119)
+}
+
+.sidebar .nav-item {
   padding: 10px 0px;
   padding-left: 20px;
   color: white;
