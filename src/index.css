@@ -14,20 +14,60 @@ code {
     monospace;
 }
 
-
 .topnavbar {
-  background-color: #242424;
+  background-color: #011C37;
+  padding-bottom: 30px;
+  padding-top: 30px;
   position: sticky;
   top: 0;
   margin-bottom: 10px;
+  z-index: 1000;
+}
+
+.navbar--rightside {
+  margin-left: 600px;
+  
+}
+
+.topnavbar .nav-link {
+  color: rgb(197, 197, 197)
+}
+
+.topnavbar .nav-link:hover {
+  color: rgb(119, 119, 119)
+}
+
+
+.topnavbar .nav-link{
+   color: white;
+   padding-left: 20px;
+   font-family: 'Inter';
+   font-style: normal;
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 19px;
+   letter-spacing: -0.02em;
  }
 
- .topnavbar .nav-link {
-   color: rgb(197, 197, 197)
- }
- 
  .topnavbar .nav-link:hover {
   color: rgb(119, 119, 119)
+}
+
+.topnav--logoname {
+  position: absolute;
+  text-align: center;
+  padding-right: 20px;
+  left: 7.92%;
+  right: 82.38%;
+  top: -10.81%;
+  bottom: 40.92%;
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 30px;
+
+  color: #FF7426;
 }
 
  .sidebar .nav-item {
@@ -41,4 +81,13 @@ code {
 
 .sidebar .nav-item.active {
   background-color: #343434;
+}
+
+.Location-comment {
+  font-size: smaller;
+}
+
+.carousel-img {
+  width: 100% !important;
+  height: 600px !important;
 }
