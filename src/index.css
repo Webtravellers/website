@@ -20,17 +20,17 @@ code {
   position: sticky;
   top: 0;
   margin-bottom: 10px;
- }
+}
 
- .topnavbar .nav-link {
-   color: rgb(197, 197, 197)
- }
- 
- .topnavbar .nav-link:hover {
+.topnavbar .nav-link {
+  color: rgb(197, 197, 197)
+}
+
+.topnavbar .nav-link:hover {
   color: rgb(119, 119, 119)
 }
 
- .sidebar .nav-item {
+.sidebar .nav-item {
   padding: 10px 0px;
   padding-left: 20px;
   color: white;
@@ -41,4 +41,13 @@ code {
 
 .sidebar .nav-item.active {
   background-color: #343434;
+}
+
+.my-justify-self-end {
+  position: absolute;
+  right: 0px;
+}
+
+.post-photo {
+  min-width: 100%;
 }
