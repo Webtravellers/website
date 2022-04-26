@@ -20,17 +20,18 @@ code {
   position: sticky;
   top: 0;
   margin-bottom: 10px;
- }
+  z-index: 1000;
+}
 
- .topnavbar .nav-link {
-   color: rgb(197, 197, 197)
- }
- 
- .topnavbar .nav-link:hover {
+.topnavbar .nav-link {
+  color: rgb(197, 197, 197)
+}
+
+.topnavbar .nav-link:hover {
   color: rgb(119, 119, 119)
 }
 
- .sidebar .nav-item {
+.sidebar .nav-item {
   padding: 10px 0px;
   padding-left: 20px;
   color: white;
@@ -41,4 +42,13 @@ code {
 
 .sidebar .nav-item.active {
   background-color: #343434;
+}
+
+.Location-comment {
+  font-size: smaller;
+}
+
+.carousel-img {
+  width: 100% !important;
+  height: 600px !important;
 }

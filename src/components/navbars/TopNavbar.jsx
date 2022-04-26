@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Nav, Navbar, NavItem, Row } from 'reactstrap'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 const TopNavbar = () => {
     //ToDo: Tasarımı Değiştir
     return (
