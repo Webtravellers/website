@@ -7,7 +7,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#1411ad, #db86f0) no-repeat center center fixed;
 }
 
 code {
@@ -17,7 +16,6 @@ code {
 
 
 .topnavbar {
-  background-color: #1411ad;
   position: sticky;
   top: 0;
   margin-bottom: 10px;
@@ -44,34 +42,7 @@ code {
   background-color: #343434;
 }
 
-.select-language {
-  background-color: #1411ad !important;
-  color: white !important;
-  font-size: 10px !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-.input-text-item {
-  color: black !important;
-  font-weight: bolder !important;
-  width: 100px;
-  border: none !important;
-  background-color: transparent !important;
-}
-
-.input-item {
-  padding-left: 10px !important;
-  border-radius: 50px !important;
-}
-
-
-.signup-header {
-  color: black !important;
-  background-color: transparent !important;
-}
-
-.socials {
-  position: absolute;
-  right: 0%;
+.auth-input {
+  border-radius: 18px !important;
+  border-color: black !important;
 }

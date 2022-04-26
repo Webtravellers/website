@@ -11,7 +11,7 @@ const AdminRouter = React.lazy(() => import("./AdminRouter"))
 const Router = () => {
     return (
         <Routes>
-            <Route path='/' element={<BaseLayout />} >
+            <Route path='/' element={<AuthLayout />} >
                 <Route exact path='' element={<HomePage />} />
             </Route>
             <Route path='users' element={<BaseLayout />}>

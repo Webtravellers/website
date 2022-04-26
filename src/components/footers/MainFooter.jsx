@@ -8,8 +8,8 @@ import { FaFacebook } from "react-icons/fa"
 
 const MainFooter = () => {
     return (
-        <footer>
-            <div className='bg-tranparent fixed-bottom'>
+        <footer className="mt-auto">
+            <div className='bg-tranparent '>
                 <div className='pt-1'>
                     <section >
                         <Container>
