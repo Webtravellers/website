@@ -16,8 +16,8 @@ code {
 
 .topnavbar {
   background-color: #011C37;
-  padding-bottom: 30px;
-  padding-top: 30px;
+  padding-bottom: 15px;
+  padding-top: 15px;
   position: sticky;
   top: 0;
   margin-bottom: 10px;
@@ -25,18 +25,13 @@ code {
 }
 
 .navbar--rightside {
-  margin-left: 600px;
+  margin-left: 700px;
   
-}
-
-.topnavbar .nav-link {
-  color: rgb(197, 197, 197)
 }
 
 .topnavbar .nav-link:hover {
   color: rgb(119, 119, 119)
 }
-
 
 .topnavbar .nav-link{
    color: white;
@@ -49,9 +44,6 @@ code {
    letter-spacing: -0.02em;
  }
 
- .topnavbar .nav-link:hover {
-  color: rgb(119, 119, 119)
-}
 
 .topnav--logoname {
   position: absolute;
@@ -64,14 +56,10 @@ code {
   font-family: 'Lobster';
   font-style: normal;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 25px;
   line-height: 30px;
 
   color: #FF7426;
-}
-
-.topnavbar .nav-link {
-  color: rgb(197, 197, 197)
 }
 
 .topnavbar .nav-link:hover {
