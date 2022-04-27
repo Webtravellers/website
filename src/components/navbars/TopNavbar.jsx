@@ -16,6 +16,11 @@ const TopNavbar = () => {
                                 Bi'Hatira
                             </NavItem>
                             <NavItem>
+                                <Link to="/dashboard" className='nav-link'>
+                                    Admin Dashboard
+                                </Link>
+                            </NavItem>
+                            <NavItem>
                                 <Link to="/" className='nav-link'>
                                     Ana sayfa
                                 </Link>
