@@ -26,23 +26,23 @@ code {
 
 .navbar--rightside {
   margin-left: 700px;
-  
+
 }
 
 .topnavbar .nav-link:hover {
   color: rgb(119, 119, 119)
 }
 
-.topnavbar .nav-link{
-   color: white;
-   padding-left: 20px;
-   font-family: 'Inter';
-   font-style: normal;
-   font-weight: 500;
-   font-size: 16px;
-   line-height: 19px;
-   letter-spacing: -0.02em;
- }
+.topnavbar .nav-link {
+  color: white;
+  padding-left: 20px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+}
 
 
 .topnav--logoname {
@@ -86,4 +86,23 @@ code {
 .carousel-img {
   width: 100% !important;
   height: 600px !important;
+}
+
+.myBold {
+  font-weight: 900;
+}
+
+.search-box {
+  border-radius: 18px;
+  height: 40px;
+}
+
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.justify-self-end {
+  display: flex;
+  align-self: flex-end;
 }
