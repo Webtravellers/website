@@ -87,3 +87,16 @@ code {
   width: 100% !important;
   height: 600px !important;
 }
+
+.container--post {
+  /* display: flex; */
+  justify-content: center;
+}
+
+.container--postbutton {
+  border-radius: 16px !important;
+}
+
+.my-height{
+  max-height: 500px !important;
+}

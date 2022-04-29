@@ -30,6 +30,7 @@ const LocationListPage = () => {
                             <th>City</th>
                             <th>Type</th>
                             <th>Description</th>
+                            <th>Status</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -40,6 +41,7 @@ const LocationListPage = () => {
                                 <td>{location.city.cityName}</td>
                                 <td>{location.type.map(t => t.name).toString()}</td>
                                 <td>{location.desc?.slice(0, 50)}</td>
+                                <td>{(location.status) ? <p>true</p> : <p>false</p>}</td>
                                 <td>
                                     <UncontrolledDropdown nav>
                                         <DropdownToggle nav className="nav-link-icon">
