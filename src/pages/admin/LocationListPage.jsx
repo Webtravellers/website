@@ -25,6 +25,18 @@ const LocationListPage = () => {
             console.log(res.data.data);
         })
     }, [])
+
+    const handleChangeStatus = (id) => {
+        const locationService = new LocationService()
+        locationService.deleteLocation(id).then(res => {
+            console.log(res);
+        })
+        locationService.getLocations().then(res => {
+            setLocations(res.data.data)
+            console.log(res.data.data);
+        })
+
+    }
     return (
         <div>
             <h1>Location List</h1>
