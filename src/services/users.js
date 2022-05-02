@@ -5,6 +5,8 @@ class UserService {
     getUsers() {
         return api().get(url)
     }
+
+
 }
 
 export default UserService

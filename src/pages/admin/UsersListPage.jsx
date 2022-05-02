@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router';
-import { Button, DropdownItem, DropdownMenu, DropdownToggle, Table, UncontrolledDropdown } from 'reactstrap'
+import { DropdownItem, DropdownMenu, DropdownToggle, Table, UncontrolledDropdown } from 'reactstrap'
 import UserService from '../../services/users'
 
 const UsersListPage = () => {
@@ -27,17 +26,17 @@ const UsersListPage = () => {
                             <th>Lastname</th>
                             <th>Email</th>
                             <th>Status</th>
-                            <th></th>
+                            {/* <th></th> */}
                         </tr>
                     </thead>
                     <tbody>
                         {users.map(user => (
                             <tr>
-                                <td>{user.firstname}</td>
+                                <td>{user.name}</td>
                                 <td>{user.lastname}</td>
                                 <td>{user.email}</td>
-                                <td>{(user.status) ? <p>true</p> : <p>false</p>}</td>
-                                <td>
+                                <td>{(user.status) ? <i className="fa-solid fa-circle"></i> : <i class="fa-solid fa-circle-notch"></i>}</td>
+                                {/*  <td>
                                     <UncontrolledDropdown nav>
                                         <DropdownToggle nav className="nav-link-icon">
                                             <i class="fa-solid fa-ellipsis"></i>
@@ -50,7 +49,7 @@ const UsersListPage = () => {
                                             <DropdownItem >Change Status</DropdownItem>
                                         </DropdownMenu>
                                     </UncontrolledDropdown>
-                                </td>
+                                </td> */}
                             </tr>
                         ))}
                     </tbody>
