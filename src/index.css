@@ -20,7 +20,6 @@ code {
   padding-top: 15px;
   position: sticky;
   top: 0;
-  margin-bottom: 10px;
   z-index: 1000;
 }
 
@@ -63,6 +62,13 @@ code {
 }
 
 .topnavbar .nav-link:hover {
+}
+
+.topnavbar .nav-link {
+  color: rgb(197, 197, 197)
+}
+
+.topnavbar .nav-link:hover {
   color: rgb(119, 119, 119)
 }
 
@@ -88,6 +94,7 @@ code {
   height: 600px !important;
 }
 
+
 .myBold {
   font-weight: 900;
 }
@@ -97,6 +104,18 @@ code {
   height: 40px;
 }
 
+.my-font {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.my-vertical-align {
+  top: 50%;
+}
+
+.my-margin300 {
+  margin-top: 300px;
+}
 
 .cursor-pointer {
   cursor: pointer;
@@ -106,3 +125,12 @@ code {
   display: flex;
   align-self: flex-end;
 }
+.my-justify-self-end {
+  position: absolute;
+  right: 0px;
+}
+
+.post-photo {
+  min-width: 100%;
+}
+
