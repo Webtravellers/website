@@ -94,6 +94,16 @@ code {
   height: 600px !important;
 }
 
+
+.myBold {
+  font-weight: 900;
+}
+
+.search-box {
+  border-radius: 18px;
+  height: 40px;
+}
+
 .my-font {
   font-size: 22px;
   font-weight: 900;
@@ -109,6 +119,11 @@ code {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.justify-self-end {
+  display: flex;
+  align-self: flex-end;
 }
 .my-justify-self-end {
   position: absolute;
