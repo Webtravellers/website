@@ -32,17 +32,21 @@ code {
   color: rgb(119, 119, 119)
 }
 
-.topnavbar .nav-link {
-  color: white;
-  padding-left: 20px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  letter-spacing: -0.02em;
-}
+.topnavbar .nav-link{
+   color: white;
+   padding-left: 20px;
+   font-family: 'Inter';
+   font-style: normal;
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 19px;
+   letter-spacing: -0.02em;
+ }
 
+
+.topnavbar .nav-link:hover {
+  color: rgb(119, 119, 119)
+}
 
 .topnav--logoname {
   position: absolute;
@@ -59,17 +63,6 @@ code {
   line-height: 30px;
 
   color: #FF7426;
-}
-
-.topnavbar .nav-link:hover {
-}
-
-.topnavbar .nav-link {
-  color: rgb(197, 197, 197)
-}
-
-.topnavbar .nav-link:hover {
-  color: rgb(119, 119, 119)
 }
 
 .sidebar .nav-item {

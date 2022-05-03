@@ -20,8 +20,8 @@ const TopNavbar = () => {
                                     Ana sayfa
                                 </Link>
                             </NavItem>
-                            <NavItem className="topnav--discovery">
-                                <Link to="/discovery" className='nav-link text-warning'>
+                            <NavItem>
+                                <Link to="/discover" className='nav-link text-warning'>
                                     Keşfet
                                 </Link>
                             </NavItem>
