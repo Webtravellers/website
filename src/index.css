@@ -62,6 +62,13 @@ code {
 }
 
 .topnavbar .nav-link:hover {
+}
+
+.topnavbar .nav-link {
+  color: rgb(197, 197, 197)
+}
+
+.topnavbar .nav-link:hover {
   color: rgb(119, 119, 119)
 }
 
@@ -103,3 +110,12 @@ code {
 .cursor-pointer {
   cursor: pointer;
 }
+.my-justify-self-end {
+  position: absolute;
+  right: 0px;
+}
+
+.post-photo {
+  min-width: 100%;
+}
+
