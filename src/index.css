@@ -29,6 +29,7 @@ code {
   
 }
 
+<<<<<<< Updated upstream
 .topnavbar .nav-link:hover {
   color: rgb(119, 119, 119)
 }
@@ -43,7 +44,22 @@ code {
    line-height: 19px;
    letter-spacing: -0.02em;
  }
+=======
+.topnavbar .nav-link {
+  color: white;
+  padding-left: 20px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+}
+>>>>>>> Stashed changes
 
+.topnavbar .nav-link:hover {
+  color: rgb(119, 119, 119)
+}
 
 .topnav--logoname {
   position: absolute;
@@ -62,10 +78,13 @@ code {
   color: #FF7426;
 }
 
+<<<<<<< Updated upstream
 .topnavbar .nav-link:hover {
   color: rgb(119, 119, 119)
 }
 
+=======
+>>>>>>> Stashed changes
 .sidebar .nav-item {
   padding: 10px 0px;
   padding-left: 20px;
