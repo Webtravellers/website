@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { DropdownItem, DropdownMenu, DropdownToggle, Table, UncontrolledDropdown } from 'reactstrap'
+import { Table } from 'reactstrap'
 import UserService from '../../services/users'
 
 const UsersListPage = () => {

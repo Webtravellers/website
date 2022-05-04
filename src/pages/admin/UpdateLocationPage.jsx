@@ -1,7 +1,7 @@
 import { Formik } from 'formik'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import { Button, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap'
+import { Button, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap'
 import useService from '../../hooks/useService'
 import CityService from '../../services/cityService'
 import LocationService from '../../services/locationService'

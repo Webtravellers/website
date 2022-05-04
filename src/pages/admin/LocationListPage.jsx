@@ -28,13 +28,13 @@ const LocationListPage = () => {
 
     const handleChangeStatus = (id) => {
         const locationService = new LocationService()
-        locationService.deleteLocation(id).then(res => {
-            console.log(res);
-        })
+        locationService.deleteLocation(id)
+
         locationService.getLocations().then(res => {
             setLocations(res.data.data)
             console.log(res.data.data);
         })
+
 
     }
     return (
@@ -59,7 +59,7 @@ const LocationListPage = () => {
                         {locations.map(location => (
                             <tr>
                                 <td>{location.name}</td>
-                                <td >{(cities.find(element => element._id === location.city).cityName)}</td>
+                                <td >{(cities.find(element => element?._id === location?.city)?.cityName)}</td>
                                 <td>{location.type.map(t => t.name).toString()}</td>
                                 <td>{location.desc?.slice(0, 50)}</td>
                                 <td>{(location.status) ? <i className="fa-solid fa-circle"></i> : <i class="fa-solid fa-circle-notch"></i>}</td>
