@@ -11,7 +11,7 @@ const TopNavbar = () => {
                 <Container>
                     <Row>
                         <Nav className="navbar-nav-hover align-items-lg-center text-light">
-                            <NavItem className="topnav--logoname">
+                            <NavItem className="logoname">
                                 <img className="navbar--logo" src={logo} alt="logo"/>
                                 Bi'Hatira
                             </NavItem>
