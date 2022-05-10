@@ -48,8 +48,7 @@ code {
   color: rgb(119, 119, 119)
 }
 
-.topnav--logoname {
-  position: absolute;
+.logoname {
   text-align: center;
   padding-right: 20px;
   left: 7.92%;
@@ -61,8 +60,11 @@ code {
   font-weight: 400;
   font-size: 25px;
   line-height: 30px;
-
   color: #FF7426;
+}
+
+.points {
+  color: white !important;
 }
 
 .sidebar .nav-item {
