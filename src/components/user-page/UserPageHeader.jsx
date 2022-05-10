@@ -21,11 +21,6 @@ const UserPageHeader = (props) => {
                         <p className="my-font">{following}</p>
                         <p className="my-font">Takip</p>
                     </div>
-
-                    <div className="d-flex flex-column text-dark m-2 align-items-center">
-                        <p className="my-font">{posts}</p>
-                        <p className="my-font">Gönderi</p>
-                    </div>
                 </div>
             </div>
         </div>

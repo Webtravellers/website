@@ -73,7 +73,6 @@ import {
 } from 'reactstrap'
 import logo from "../../assets/scss/imgs/turkey-logo.png"
 import translate from "../../assets/imgs/translate-logo.png"
-import { IoLanguageOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 
 const TopNavbar = () => {
@@ -84,7 +83,7 @@ const TopNavbar = () => {
                     <div className='d-flex align-items-center justify-content-between'>
                         <div className='d-flex'>
                             <div className='d-flex flex-column logoname'>
-                                <img className="navbar--logo" src={logo} alt="logo"/>
+                                <img className="navbar--logo" src={logo} alt="logo" />
                                 Bi'Hatıra
                             </div>
                             <Nav className="navbar-nav-hover align-items-lg-center  text-light">
@@ -104,7 +103,7 @@ const TopNavbar = () => {
                                         Hatıralar
                                     </Link>
                                 </NavItem>
-                                
+
                             </Nav>
                         </div>
 
@@ -132,7 +131,7 @@ const TopNavbar = () => {
                                     </DropdownItem>
                                 </DropdownMenu>
                                 <DropdownToggle className='select-language'>
-                                    <img src={translate} alt="translate-logo" />
+                                    <i class="fa-solid fa-language language"></i>
                                 </DropdownToggle>
 
                             </UncontrolledDropdown>

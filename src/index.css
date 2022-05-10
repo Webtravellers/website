@@ -33,16 +33,16 @@ code {
   color: rgb(119, 119, 119)
 }
 
-.topnavbar .nav-link{
-   color: white;
-   padding-left: 20px;
-   font-family: 'Inter';
-   font-style: normal;
-   font-weight: 500;
-   font-size: 16px;
-   line-height: 19px;
-   letter-spacing: -0.02em;
- }
+.topnavbar .nav-link {
+  color: white;
+  padding-left: 20px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+}
 
 
 .topnavbar .nav-link:hover {
@@ -121,6 +121,7 @@ code {
   display: flex;
   align-self: flex-end;
 }
+
 .my-justify-self-end {
   position: absolute;
   right: 0px;
@@ -137,7 +138,7 @@ code {
 
 .my-filter-dropdown {
   margin-bottom: 15px;
-  width: 100%; 
+  width: 100%;
 }
 
 .my-filter-left {
@@ -154,4 +155,16 @@ code {
   justify-content: center;
   align-self: baseline;
   margin-top: 10%;
+}
+
+.language {
+  padding: 0px;
+  font-size: 25px;
+}
+
+.select-language {
+  padding: 0px;
+  background-color: #011C37 !important;
+  border: none !important;
+  color: #E4E6F1 !important;
 }

@@ -11,7 +11,7 @@ const AccountPage = () => {
                 userProfilePhoto=""
                 followers="2341"
                 following="1234"
-                posts="76"
+
             />
             <div className="w-100 d-flex justify-content-center my-margin300">
                 <div className="d-flex flex-column justify-content-center align-items-center w-75">
