@@ -1,4 +1,5 @@
 body {
+  background-color: #E4E6F1 !important;
   margin: 0;
   width: 100%;
   overflow-x: hidden;
@@ -129,3 +130,28 @@ code {
   min-width: 100%;
 }
 
+.my-filter-text {
+  font-family: 'Inter';
+  border-radius: 10px;
+}
+
+.my-filter-dropdown {
+  margin-bottom: 15px;
+  width: 100%; 
+}
+
+.my-filter-left {
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
+.my-filter-left-bottom {
+  margin-top: 20%;
+}
+
+.my-filter-rightside {
+  width: 80%;
+  justify-content: center;
+  align-self: baseline;
+  margin-top: 10%;
+}
