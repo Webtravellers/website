@@ -10,11 +10,15 @@ class LocationService {
     }
 
     updateLocation(id, data) {
-        return api().put(api_url+id, data)
-    } 
+        return api().put(api_url + id, data)
+    }
 
     getById(id) {
-        return api().get(api_url+id)
+        return api().get(api_url + id)
+    }
+
+    deleteLocation(id) {
+        return api().delete(api_url + id)
     }
 }
 
