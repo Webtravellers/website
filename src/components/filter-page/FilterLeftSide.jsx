@@ -13,7 +13,7 @@ const FilterLeftSide = () => {
                         <p><strong>Kategori Seçiniz</strong></p>
                         <UncontrolledDropdown>
                             <DropdownToggle caret className="my-filter-dropdown" variant="success" id="dropdown-basic">
-                                Tarihi Mekan 
+                                Tarihi Mekan
                             </DropdownToggle>
                             <DropdownMenu right>
                                 <DropdownItem href="#/action-1">Action</DropdownItem>
@@ -61,12 +61,12 @@ const FilterLeftSide = () => {
                     <div>
                         <form>
                             <label for="location"></label>
-                            <input className="my-filter-dropdown mb-5" type="text" placeholder="Başlangıç Noktası" id="location" name="location"/>
+                            <input className="my-filter-dropdown mb-5" type="text" placeholder="Başlangıç Noktası" id="location" name="location" />
                         </form>
                     </div>
                     <Button className="bg-dark text-light m-4">Filtrele</Button>
                 </div>
-                
+
 
                 <div className="my-filter-left-bottom">
                     <h3 className="p-5">Yöresel Tatlarını Denediniz mi?</h3>

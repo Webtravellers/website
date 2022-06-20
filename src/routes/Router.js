@@ -7,6 +7,9 @@ import LocationPage from '../pages/LocationPage'
 import AccountPage from '../pages/user/AccountPage'
 import IndividualPostPage from '../pages/IndividualPostPage'
 import FilteringPage from '../pages/FilteringPage'
+import SigninPage from '../pages/auth/SigninPage'
+import SignupPage from '../pages/auth/SignupPage'
+import AuthLayout from '../layouts/AuthLayout'
 
 const AdminRouter = React.lazy(() => import("./AdminRouter"))
 
@@ -20,6 +23,10 @@ const Router = () => {
                 <Route exact path='account' element={<AccountPage />} />
                 <Route exact path='post' element={<IndividualPostPage />} />
                 <Route exact path='filtering' element={<FilteringPage />} />
+                <Route path='users' element={<AuthLayout />}>
+                    <Route path='signup' element={<SignupPage />} />
+                    <Route path='signin' element={<SigninPage />} />
+                </Route>
             </Route>
             <Route path='dashboard/*' element={
                 <React.Suspense fallback={<p>...</p>}>
