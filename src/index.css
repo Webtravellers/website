@@ -169,6 +169,17 @@ code {
   color: #E4E6F1 !important;
 }
 
+
+.discover-page-items {
+  width: 160px;
+  height: 160px;
+  border-radius: 10px;
+}
+
+.discover-page-item-text {
+  width: 160px;
+  text-align: center;
+
 .my-grid-cols-4 {
   display: grid;
   grid-gap: 50px;
