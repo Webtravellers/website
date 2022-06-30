@@ -179,6 +179,7 @@ code {
 .discover-page-item-text {
   width: 160px;
   text-align: center;
+}
 
 .my-grid-cols-4 {
   display: grid;
@@ -192,4 +193,34 @@ code {
 .wh-200-150 {
   width: 200px;
   height: 150px;
+}
+
+.suggestion-container {
+  background-color: #E7FAFE;
+  border-radius: 6%;
+  margin: 4rem auto;
+  max-width: 50%;
+}
+
+.suggestion-h1-part {
+  font-weight: 900;
+  padding-left: 5%;
+  max-width: 60%;
+}
+
+.suggestion-desc-part {
+  max-width: 65%;
+  padding: 5%;
+}
+
+.suggestion-img-part {
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 5%;
+}
+
+.suggestionIMG {
+  width: 200%;
+  height: 200%;
+  border-radius: 5%;
 }
