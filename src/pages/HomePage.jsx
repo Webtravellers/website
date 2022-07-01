@@ -4,14 +4,12 @@ import LocationService from "../services/locationService";
 import suggestionimg from "../assets/imgs/suggestionimg.png";
 import UserInfo from "../components/home-page/UserInfo";
 import { useNavigate } from "react-router";
+import ForgottenFlavors from "../components/home-page/ForgottenFlavors.jsx";
 
 const HomePage = () => {
   const navigate = useNavigate();
   const [locations, setLocations] = useState([]);
-  const dogalGuzellikler = [];
-  const eglence = [];
-  // const unutulmuşLezzetler = []
-  const muzeler = [];
+  const popular = [];
   useEffect(() => {
     const locationService = new LocationService();
     locationService.getLocations().then((res) => {
@@ -21,13 +19,8 @@ const HomePage = () => {
 
   const divideLocations = () => {
     for (let i = 0; i <= locations.length; i++) {
-      if (locations[i]?.type[0]?.name === "Müze") {
-        muzeler.push(locations[i]);
-      } else if (locations[i]?.type[0]?.name === "Doğal Güzellik") {
-        dogalGuzellikler.push(locations[i]);
-      } else if (locations[i]?.type[0]?.name === "Eğlence") {
-        eglence.push(locations[i]);
-      }
+        popular.push(locations[i]);
+      
     }
   };
   divideLocations();
@@ -71,13 +64,21 @@ const HomePage = () => {
           // Kategori için
         }
 
-        <CategoryItem type="Popüler" locations={muzeler} />
+        <CategoryItem type="Popüler" locations={popular} />
       </div>
 
-      <div>
+      <div className="d-flex flex-column align-items-center">
         {
           // Unutulmuş Tatlar için
         }
+        <h1>Unutulmuş Tatlar</h1>
+        <div className="forgotten-flavors-home-page">
+          Türk mutfağı birbirinden zengin ve farklı lezzetlere ev sahipliği
+          yaparken az bilinen meşhur lezzetleri de unutmamak lazım. Sizin için
+          Türk mutfağında az bilinen 20 yöresel lezzeti paylaştık. Eğer bu
+          lezzetleri denemediyseniz mutlaka bir yolunu bulun!
+        </div>
+        <ForgottenFlavors/>
       </div>
 
       <div>
