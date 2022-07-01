@@ -7,7 +7,7 @@ function createCard(flavor) {
         <ForgottenFlavorsCard 
         key = {flavor.id}
         name = {flavor.name}
-        imgURL = {flavor.imgURL}
+        photos = {flavor.photos}
         type = {flavor.type}
         />
     )

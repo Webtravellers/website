@@ -5,11 +5,14 @@ import suggestionimg from "../assets/imgs/suggestionimg.png";
 import UserInfo from "../components/home-page/UserInfo";
 import { useNavigate } from "react-router";
 import ForgottenFlavors from "../components/home-page/ForgottenFlavors.jsx";
+import { Button } from "reactstrap";
+import TopMuseums from "../components/home-page/TopMuseums";
 
 const HomePage = () => {
   const navigate = useNavigate();
   const [locations, setLocations] = useState([]);
   const popular = [];
+  const muzeler = [];
   useEffect(() => {
     const locationService = new LocationService();
     locationService.getLocations().then((res) => {
@@ -19,8 +22,10 @@ const HomePage = () => {
 
   const divideLocations = () => {
     for (let i = 0; i <= locations.length; i++) {
-        popular.push(locations[i]);
-      
+      popular.push(locations[i]);
+      if (locations[i]?.type[0]?.name === "Müze") {
+        muzeler.push(locations[i]);
+      }
     }
   };
   divideLocations();
@@ -32,7 +37,7 @@ const HomePage = () => {
           // Öneri için
         }
         <div className="suggestion-container d-flex flex-row align-items-center mt-5">
-          <div>
+          <div className="suggestion-part">
             <h1 className="suggestion-h1-part">
               <span>Ankara Eymir Gölü</span>
             </h1>
@@ -78,13 +83,29 @@ const HomePage = () => {
           Türk mutfağında az bilinen 20 yöresel lezzeti paylaştık. Eğer bu
           lezzetleri denemediyseniz mutlaka bir yolunu bulun!
         </div>
-        <ForgottenFlavors/>
+        <ForgottenFlavors />
       </div>
 
-      <div>
+      <div className="d-flex flex-row">
         {
-          // Top 20 Müze için
+          // Top 10 Müze için
         }
+        <div>
+          <h1 className="top-part-h1">
+            Her Öğrencinin Kesinlikle Gezmesi Gereken 10 Müze
+          </h1>
+          <div className="top-part-home-page">
+            Milli Eğitim Bakanlığının ders müfredatı kapsamında bir ilkokul,
+            ortaokul ve lise öğrencisinin mutlaka gitmesi gerek yerleri sizin
+            için planladık.
+          </div>
+          <Button className="category-item-button bg-dark text-light justify-self-end m-3">
+            Daha Fazlası için
+          </Button>
+        </div>
+        <div>
+          {/* <TopMuseums /> */}
+        </div>
       </div>
     </div>
   );

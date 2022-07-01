@@ -209,18 +209,22 @@ code {
   background-color: #E7FAFE;
   border-radius: 39px;
   margin: 4rem auto;
-  max-width: 50%;
+  max-width: 65%;
+}
+
+.suggestion-part {
+  padding-right: 4rem;
 }
 
 .suggestion-h1-part {
   font-weight: 900;
-  padding-left: 5%;
-  max-width: 60%;
+  padding: 2rem;
+  max-width: 90%;
 }
 
 .suggestion-desc-part {
-  max-width: 65%;
-  padding: 5%;
+  max-width: 60rem;
+  padding: 2rem;
 }
 
 .suggestion-img-part {
@@ -230,14 +234,14 @@ code {
 }
 
 .suggestionIMG {
-  width: 200%;
-  height: 200%;
-  border-radius: 39px;
+  width: 130%;
+  height: 130%;
+  border-bottom-right-radius: 39px;
 }
 
 .userInfoIMG {
-  width: 15%;
-  height: 15%;
+  width: 20%;
+  height: 20%;
   padding-left: 4%;
 }
 
@@ -272,4 +276,16 @@ code {
   width: 250px;
   height: 250px;
   border-radius: 39px;
+}
+
+.top-part-h1 {
+  max-width: 30rem;
+  font-weight: 900;
+}
+
+.top-part-home-page {
+  background: #C4C4C4;
+  border-radius: 27px;
+  max-width: 30rem;
+  padding: 2rem;
 }
