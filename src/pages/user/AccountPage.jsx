@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 const AccountPage = () => {
     const navigate = useNavigate()
     return (
-        <div >
+        <div>
             <UserPageHeader
                 userProfilePhoto=""
                 followers="2341"
@@ -25,7 +25,7 @@ const AccountPage = () => {
                 </div>
             </div>
 
-        </div >
+        </div>
     )
 }
 
