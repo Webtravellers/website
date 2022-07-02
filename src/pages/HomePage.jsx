@@ -72,11 +72,11 @@ const HomePage = () => {
         <CategoryItem type="Popüler" locations={popular} />
       </div>
 
-      <div className="d-flex flex-column align-items-center">
+      <div className="d-flex flex-column align-items-center pt-5 mt-5">
         {
           // Unutulmuş Tatlar için
         }
-        <h1>Unutulmuş Tatlar</h1>
+        <h1 className="home-page-h1">Unutulmuş Tatlar</h1>
         <div className="forgotten-flavors-home-page">
           Türk mutfağı birbirinden zengin ve farklı lezzetlere ev sahipliği
           yaparken az bilinen meşhur lezzetleri de unutmamak lazım. Sizin için
@@ -86,13 +86,13 @@ const HomePage = () => {
         <ForgottenFlavors />
       </div>
 
-      <div className="d-flex flex-row">
+      <div className="d-flex flex-row pt-5 mt-5">
         {
           // Top 10 Müze için
         }
-        <div>
-          <h1 className="top-part-h1">
-            Her Öğrencinin Kesinlikle Gezmesi Gereken 10 Müze
+        <div className="top-part">
+          <h1 className="home-page-h1">
+            Her Öğrencinin Kesinlikle Gezmesi Gereken 12 Müze
           </h1>
           <div className="top-part-home-page">
             Milli Eğitim Bakanlığının ders müfredatı kapsamında bir ilkokul,
@@ -104,7 +104,7 @@ const HomePage = () => {
           </Button>
         </div>
         <div>
-          {/* <TopMuseums /> */}
+          <TopMuseums />
         </div>
       </div>
     </div>
