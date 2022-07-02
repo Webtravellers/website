@@ -18,7 +18,7 @@ const Router = () => {
         <Routes>
             <Route path='/' element={<BaseLayout />} >
                 <Route exact path='' element={<HomePage />} />
-                <Route exact path='location' element={<LocationPage />} />
+                <Route exact path='location/:id' element={<LocationPage />} />
                 <Route exact path='discover' element={<DiscoverPage />} />
                 <Route exact path='account' element={<AccountPage />} />
                 <Route exact path='post' element={<IndividualPostPage />} />

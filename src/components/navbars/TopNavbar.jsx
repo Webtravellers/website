@@ -110,6 +110,7 @@ const TopNavbar = () => {
                         <Nav className='d-flex align-items-center justify-content-between'>
                             <NavItem>
                                 <Link to="/users/signup" className='nav-link text-warning'>
+                                <Link to="users/signup" className='nav-link text-warning'>
                                     Hesap Oluştur
                                 </Link>
                             </NavItem>
@@ -118,6 +119,8 @@ const TopNavbar = () => {
                             </div>
                             <NavItem>
                                 <Link to="/users/signin" className='nav-link'>
+                                <Link to="users/signin" className='nav-link'>
+
                                     Giriş Yap
                                 </Link>
                             </NavItem>
