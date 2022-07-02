@@ -11,7 +11,7 @@ const TopMuseumCard = (props) => {
         <div className="d-flex flex-column m-1">
             <div className="d-flex">
                 <div className="d-flex flex-column align-items-center">
-                    <img onClick={() => { navigate("/location") }} className="cursor-pointer hover-overlay top-museum-items" src={locs?.photos[0]} alt="" />
+                    <img onClick={() => { navigate("/location/" + locs._id ) }} className="cursor-pointer hover-overlay top-museum-items" src={locs?.photos[0]} alt="" />
                 </div>
             </div>
         </div>

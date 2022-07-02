@@ -247,7 +247,7 @@ code {
 }
 
 .forgotten-flavors-home-page {
-  max-width: 80%;
+  max-width: 83rem;
   text-align-last: center;
   background-color:#C4C4C4;
   border-radius: 39px;
@@ -259,7 +259,7 @@ code {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 4rem auto;
-  max-width: 90%;
+  max-width: 83rem;
 }
 
 .forgotten-flavors-card {
@@ -280,20 +280,20 @@ code {
 }
 
 .home-page-h1 {
-  max-width: 30rem;
+  max-width: 40rem;
   font-weight: 900;
   padding-bottom: 2rem;
 }
 
 .top-part {
-  padding-right: 4rem;
+  padding: 4rem;
   max-width: 150%;
 }
 
 .top-part-home-page {
   background: #C4C4C4;
   border-radius: 27px;
-  max-width: 30rem;
+  max-width: 40rem;
   padding: 2rem;
 }
 
@@ -310,6 +310,7 @@ code {
   height: 100px;
   border-radius: 10px;
   transition: all 100ms ease-in-out;
+}
 .carousels img {
   height: 800px;
   border-radius: 55px;
