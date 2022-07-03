@@ -93,6 +93,8 @@ code {
 
 .myBold {
   font-weight: 900;
+  font-size: 35px;
+  padding-bottom: 22px;
 }
 
 .search-box {
@@ -219,13 +221,13 @@ code {
 
 .suggestion-h1-part {
   font-weight: 900;
-  padding: 3rem;
+  padding: 2rem;
   max-width: 90%;
 }
 
 .suggestion-desc-part {
   max-width: 60rem;
-  padding: 3rem;
+  padding: 2rem;
 }
 
 .suggestion-img-part {

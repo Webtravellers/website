@@ -64,7 +64,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div>
+      <div className="pt-5 mt-5">
         {
           // Kategori için
         }
