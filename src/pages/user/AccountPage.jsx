@@ -17,10 +17,10 @@ const AccountPage = () => {
                 <div className="d-flex flex-column justify-content-center align-items-center w-75">
                     <Button className="bg-dark text-light">Gönderi Paylaş</Button>
                     <div className="my-1 mb-8 text-center">
-                        <img onClick={() => { navigate('/') }} className="p-3 m-1 cursor-pointer" src={require("../../assets/imgs/img3.png")} alt="" />
-                        <img onClick={() => { navigate('/') }} className="p-3 m-1 cursor-pointer" src={require("../../assets/imgs/img3.png")} alt="" />
-                        <img onClick={() => { navigate('/') }} className="p-3 m-1 cursor-pointer" src={require("../../assets/imgs/img3.png")} alt="" />
-                        <img onClick={() => { navigate('/') }} className="p-3 m-1 cursor-pointer" src={require("../../assets/imgs/img3.png")} alt="" />
+                        <img onClick={() => { navigate('/') }} className="p-3 m-1 cursor-pointer" src={require("../../assets/imgs/img3.PNG")} alt="" />
+                        <img onClick={() => { navigate('/') }} className="p-3 m-1 cursor-pointer" src={require("../../assets/imgs/img3.PNG")} alt="" />
+                        <img onClick={() => { navigate('/') }} className="p-3 m-1 cursor-pointer" src={require("../../assets/imgs/img3.PNG")} alt="" />
+                        <img onClick={() => { navigate('/') }} className="p-3 m-1 cursor-pointer" src={require("../../assets/imgs/img3.PNG")} alt="" />
                     </div>
                 </div>
             </div>
