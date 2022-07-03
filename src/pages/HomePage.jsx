@@ -32,11 +32,11 @@ const HomePage = () => {
 
   return (
     <div className="d-flex flex-column align-items-center mt-5">
-      <div>
+      <div className="d-flex justify-content-center">
         {
           // Öneri için
         }
-        <div className="suggestion-container d-flex flex-row align-items-center mt-5">
+        <div className="suggestion-container d-flex flex-row align-items-center">
           <div className="suggestion-part">
             <h1 className="suggestion-h1-part">
               <span>Ankara Eymir Gölü</span>

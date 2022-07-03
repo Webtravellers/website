@@ -209,8 +209,8 @@ code {
 .suggestion-container {
   background-color: #E7FAFE;
   border-radius: 39px;
-  margin: 4rem auto;
-  max-width: 65%;
+  padding: 4rem auto;
+  max-width: 81rem;
 }
 
 .suggestion-part {
@@ -219,25 +219,25 @@ code {
 
 .suggestion-h1-part {
   font-weight: 900;
-  padding: 2rem;
+  padding: 3rem;
   max-width: 90%;
 }
 
 .suggestion-desc-part {
   max-width: 60rem;
-  padding: 2rem;
+  padding: 3rem;
 }
 
 .suggestion-img-part {
   display: flex;
   justify-content: flex-end;
-  padding-left: 5%;
+  padding-left: 4rem;
 }
 
 .suggestionIMG {
   width: 130%;
   height: 130%;
-  border-bottom-right-radius: 39px;
+  border-radius: 39px;
 }
 
 .userInfoIMG {
@@ -280,27 +280,27 @@ code {
 }
 
 .home-page-h1 {
-  max-width: 40rem;
+  max-width: 65rem;
   font-weight: 900;
-  padding-bottom: 2rem;
+  padding-left: 2rem;
 }
 
 .top-part {
   padding: 4rem;
-  max-width: 150%;
+  margin-right: 0.4rem;
+  max-width: 67rem;
 }
 
 .top-part-home-page {
   background: #C4C4C4;
   border-radius: 27px;
-  max-width: 40rem;
+  max-width: 50rem;
   padding: 2rem;
 }
 
 .top-museum-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   max-width: 25rem;
   padding-bottom: 10rem;
 }
