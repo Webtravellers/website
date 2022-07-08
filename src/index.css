@@ -68,6 +68,14 @@ code {
   color: white !important;
 }
 
+.topnavbar .nav-link {
+  color: rgb(197, 197, 197)
+}
+
+.topnavbar .nav-link:hover {
+  color: rgb(119, 119, 119)
+}
+
 .sidebar .nav-item {
   padding: 10px 0px;
   padding-left: 20px;
@@ -185,7 +193,7 @@ code {
 
 .category-item {
   background-color: #E7F7FD;
-  margin:0 15px;
+  margin: 0 15px;
   border-radius: 39px;
 }
 
@@ -251,7 +259,7 @@ code {
 .forgotten-flavors-home-page {
   max-width: 83rem;
   text-align-last: center;
-  background-color:#C4C4C4;
+  background-color: #C4C4C4;
   border-radius: 39px;
   padding: 10px;
 }
@@ -313,6 +321,7 @@ code {
   border-radius: 10px;
   transition: all 100ms ease-in-out;
 }
+
 .carousels img {
   height: 800px;
   border-radius: 55px;
@@ -320,4 +329,9 @@ code {
 
 .carousels {
   margin: 10px;
+}
+
+.modal-w {
+  width: 60rem !important;
+  max-width: none !important;
 }
