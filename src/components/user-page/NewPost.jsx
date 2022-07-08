@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Modal, Progress } from 'reactstrap';
-import PostService from '../../services/postServices';
 import { NEW_POST_RESET } from '../../constants/postConstants';
+import { addNewPost, clearErrors } from '../../store/actions/postActions';
 
 
 const NewPost = ({ newPost, setNewPost }) => {
@@ -18,9 +18,7 @@ const NewPost = ({ newPost, setNewPost }) => {
     const [postImage, setPostImage] = useState("");
     const [postPreview, setPostPreview] = useState("");
     const [caption, setCaption] = useState("");
-    const [showEmojis, setShowEmojis] = useState(false);
     const [dragged, setDragged] = useState(false);
-    const postService = new PostService()
 
     const handleDragChange = () => {
         setDragged(!dragged);
@@ -56,13 +54,13 @@ const NewPost = ({ newPost, setNewPost }) => {
         formData.set("caption", caption);
         formData.set("post", postImage);
 
-        dispatch(postService.addNewPost(formData));
+        dispatch(addNewPost(formData));
     }
 
     useEffect(() => {
         if (error) {
             toast.error(error);
-            dispatch(postService.clearErrors());
+            dispatch(clearErrors());
         }
         if (success) {
             toast.success("Post Shared");
@@ -76,7 +74,7 @@ const NewPost = ({ newPost, setNewPost }) => {
         }
     }, [dispatch, error, success, navigate]);
     return (
-        <Modal open={newPost} onClose={() => setNewPost(false)} maxWidth='xl'>
+        <Modal isOpen={newPost} onClosed={() => setNewPost(false)} maxWidth='xl'>
             <div className="flex flex-col sm:w-screen max-w-4xl">
                 <div className="bg-white py-3 border-b px-4 flex justify-between w-full">
                     <span className="font-medium">Create new post</span>
@@ -131,9 +129,7 @@ const NewPost = ({ newPost, setNewPost }) => {
                                 cols="40"
                                 rows="12"
                                 value={caption}
-                                onChange={(e) => setCaption(e.target.value)}
-                                onClick={() => setShowEmojis(false)}
-                            >
+                                onChange={(e) => setCaption(e.target.value)}                            >
                             </textarea>
 
                             <div className="flex items-center justify-between">
