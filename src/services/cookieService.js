@@ -1,5 +1,10 @@
 import Cookie from 'js-cookie'
-class CookieService {
+
+export const CookieTypes = {
+    AUTH: "AUTH"
+}
+
+export class CookieService {
     static get(key) {
         const data = Cookie.get(key)
         try {
@@ -20,5 +25,3 @@ class CookieService {
         Cookie.remove(key)
     }
 }
-
-export default CookieService

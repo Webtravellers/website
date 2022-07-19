@@ -332,6 +332,19 @@ code {
 }
 
 .modal-w {
-  width: 60rem !important;
-  max-width: none !important;
+  width: 30rem !important;
+  max-width: 30rem !important;
+}
+
+.resize-none {
+  resize: none;
+  height: 16rem !important;
+}
+
+.max-width-40rem {
+  max-width: 27.5rem !important;
+}
+
+.opacity-40 {
+  opacity: 0.4;
 }

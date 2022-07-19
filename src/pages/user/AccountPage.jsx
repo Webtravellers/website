@@ -16,7 +16,7 @@ const AccountPage = () => {
             />
             <div className="w-100 d-flex justify-content-center my-margin300">
                 <div className="d-flex flex-column justify-content-center align-items-center w-75">
-                    <Button className="bg-dark text-light">Gönderi Paylaş</Button>
+                    <Button onClick={() => setNewPost(true)} className="bg-dark text-light">Gönderi Paylaş</Button>
                     <NewPost newPost={newPost} setNewPost={setNewPost} />
                     <div className="grid grid-cols-2 gap-1 sm:gap-8 my-1 mb-8 text-center">
                         <img onClick={() => { navigate('/') }} className="p-3 m-1 cursor-pointer" src={require("../../assets/imgs/img3.png")} alt="" />

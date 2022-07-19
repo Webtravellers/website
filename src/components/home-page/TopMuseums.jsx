@@ -3,11 +3,10 @@ import LocationService from "../../services/locationService";
 import TopMuseumCard from "./TopMuseumCard";
 
 function createTopMuseumCard(museum) {
-    console.log(museum)
-    return(
-        <TopMuseumCard 
-            key = {museum._id}
-            locations = {museum}
+    return (
+        <TopMuseumCard
+            key={museum._id}
+            locations={museum}
         />
     )
 }
@@ -20,13 +19,12 @@ const TopMuseums = () => {
         locationService.getLocations().then(res => {
             setLocations(res.data.data)
         })
-    })
+    }, [])
 
     const divideLocations = () => {
         let count = 0
         for (let i = 0; i <= locations.length; i++) {
-            if (count > 11)
-            {
+            if (count > 11) {
                 break
             }
             if (locations[i]?.type[0]?.name === "Müze") {
@@ -35,7 +33,7 @@ const TopMuseums = () => {
             }
         }
     }
-    
+
     divideLocations()
     console.log(muzeler)
 
