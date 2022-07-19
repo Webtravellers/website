@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
 import Swal from 'sweetalert2'
 import authService from '../services/authService'
+import { CookieService, CookieTypes } from '../services/cookieService'
 import { LogoutAction } from '../store/actions/authActions'
 
 const useAuth = () => {
@@ -16,6 +17,7 @@ const useAuth = () => {
 
     const handleSignin = (values, callback = null) => {
         authService.signin(values).then(res => {
+            CookieService.set(CookieTypes.AUTH, { id: res.data.data.user._id, token: res.data.data.token })
             Swal.fire({
                 title: "Başarılı",
                 text: res.data.message,

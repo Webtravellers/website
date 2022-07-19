@@ -17,7 +17,7 @@ const DiscoverPage = () => {
         locationService.getLocations().then(res => {
             setLocations(res.data.data)
         })
-    })
+    }, [])
 
     const divideLocations = () => {
         for (let i = 0; i <= locations.length; i++) {

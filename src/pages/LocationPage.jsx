@@ -24,7 +24,7 @@ const LocationPage = () => {
         cityService.getCities().then(res => {
             setCities(res.data.data)
         })
-    })
+    }, [])
 
     let currentCity = null
     cities.forEach(city => {

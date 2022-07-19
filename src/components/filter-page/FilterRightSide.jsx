@@ -11,7 +11,7 @@ const FilterRightSide = () => {
         locationService.getLocations().then(res => {
             setLocations(res.data.data)
         })
-    })
+    }, [])
     return (
         <div className="my-grid-cols-4 m-5 p-5">
             {locations.map(location => (

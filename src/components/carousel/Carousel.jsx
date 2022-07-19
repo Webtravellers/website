@@ -13,7 +13,7 @@ const Carousel = () => {
         locationService.getById(id).then(res => {
             setLocationPhotos(res.data.data.photos)
         })
-    })
+    }, [])
 
     const items = locationPhotos.map(link => {
         return {

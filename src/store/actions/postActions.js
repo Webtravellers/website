@@ -1,26 +1,22 @@
-import axios from "axios";
+import api from "../../services/api";
 import { NEW_POST_FAIL, NEW_POST_REQUEST, NEW_POST_SUCCESS, CLEAR_ERRORS } from "../../constants/postConstants";
+import PostService from "../../services/postService";
 
 
 // New Post
-export const addNewPost = (postData) => async (dispatch) => {
-    try {
-
-        dispatch({ type: NEW_POST_REQUEST });
-        const config = { header: { "Content-Type": "application/json" } }
-        const { data } = await axios.post("/api/v1/post/new", postData, config);
-
-        dispatch({
-            type: NEW_POST_SUCCESS,
-            payload: data,
-        });
-
-    } catch (error) {
-        dispatch({
-            type: NEW_POST_FAIL,
-            payload: error.response.data.message,
-        });
-    }
+export const addNewPost = (userId, postData) => async (dispatch) => {
+    dispatch({ type: NEW_POST_REQUEST });
+    const postService = new PostService()
+    postService.newPost(userId, postData)
+        .then(res => {
+            dispatch({ type: NEW_POST_SUCCESS });
+        })
+        .catch(err => {
+            dispatch({
+                type: NEW_POST_FAIL,
+                payload: err?.response?.data?.message ?? "Hata var",
+            });
+        })
 }
 
 // Clear All Errors
