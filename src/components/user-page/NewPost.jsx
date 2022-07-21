@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Modal, ModalBody, ModalHeader, Progress } from 'reactstrap';
 import { NEW_POST_RESET } from '../../constants/postConstants';
@@ -8,14 +7,12 @@ import PostService from '../../services/postService';
 import { addNewPost, clearErrors } from '../../store/actions/postActions';
 
 
-const NewPost = ({ newPost, setNewPost }) => {
+const NewPost = ({ newPost, setNewPost, userId }) => {
 
     const dispatch = useDispatch();
-    const navigate = useNavigate();
-
     // const { loading, success, error } = useSelector((state) => state.newPost);
     const [loading, setLoading] = useState(false)
-    const { id: userId } = useSelector((state) => state.auth);
+
     const [postImage, setPostImage] = useState("");
     const [postPreview, setPostPreview] = useState("");
     const [caption, setCaption] = useState("");
