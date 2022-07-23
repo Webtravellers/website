@@ -208,12 +208,25 @@ code {
   grid-template-columns: repeat(4, 1fr);
   height: 150px;
   width: auto;
+}
 
+.my-grid-cols-2 {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(2, 1fr);
+  height: 150px;
+  width: auto;
 }
 
 .wh-200-150 {
   width: 200px;
   height: 150px;
+}
+
+.posts-in-profile {
+  width: 30rem;
+  height: 20rem;
+  border-radius: 4rem;
 }
 
 .suggestion-container {
