@@ -72,7 +72,6 @@ import {
     DropdownItem
 } from 'reactstrap'
 import logo from "../../assets/scss/imgs/turkey-logo.png"
-import translate from "../../assets/imgs/translate-logo.png"
 import { Link } from 'react-router-dom'
 
 const TopNavbar = () => {
@@ -80,7 +79,7 @@ const TopNavbar = () => {
         <div className='topnavbar'>
             <Navbar>
                 <Container>
-                    <div className='d-flex align-items-center justify-content-between'>
+                    <div className='d-flex align-items-center justify-content-between w-100'>
                         <div className='d-flex'>
                             <div className='d-flex flex-column logoname'>
                                 <img className="navbar--logo" src={logo} alt="logo" />
@@ -107,7 +106,7 @@ const TopNavbar = () => {
                             </Nav>
                         </div>
 
-                        <Nav className='d-flex align-items-center justify-content-between'>
+                        <Nav className='d-flex align-items-center '>
                             <NavItem>
                                 <Link to="/users/signup" className='nav-link text-warning'>
                                     Hesap Oluştur
