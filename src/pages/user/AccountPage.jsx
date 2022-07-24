@@ -11,7 +11,7 @@ const AccountPage = () => {
     const [newPost, setNewPost] = useState(false)
     const [posts, setPosts] = useState([])
     const [user, setUser] = useState({})
-    const { id: userId } = useSelector((state) => state.auth);
+    const { user: { _id: userId } } = useSelector((state) => state.auth);
 
     useEffect(() => {
         const userService = new UserService()
@@ -23,8 +23,6 @@ const AccountPage = () => {
         postService.getPostsByUser(String(userId)).then(res => {
             setPosts(res.data.data)
         })
-
-
 
     }, [])
 
@@ -44,7 +42,7 @@ const AccountPage = () => {
                     <NewPost newPost={newPost} setNewPost={setNewPost} userId={userId} />
                     <div className="my-grid-cols-2 my-4 mb-8 text-center">
                         {
-                            posts.map(post => (
+                            posts?.map(post => (
                                 <div className="d-flex ">
                                     <img onClick={() => { navigate('/') }} className="p-1  cursor-pointer posts-in-profile" src={post.photo} alt="" />
                                 </div>
