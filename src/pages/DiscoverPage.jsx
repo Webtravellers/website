@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import CategoryItem from "../components/searchPage/CategoryItem";
 import SearchBox from "../components/searchPage/SearchBox";
 import LocationService from "../services/locationService";
+import { useTranslation } from "react-i18next";
 
 
 
 const DiscoverPage = () => {
+    const { t, i18n } = useTranslation();
 
     const [locations, setLocations] = useState([])
     const dogalGuzellikler = []
@@ -35,15 +37,11 @@ const DiscoverPage = () => {
 
     }
     divideLocations()
-    console.log(eglence);
-    console.log(dogalGuzellikler);
-    console.log(unutulmuşLezzetler);
-    console.log(muzeler);
 
     return (
 
         <div className="d-flex flex-column align-items-center">
-            <h2 className="m-5 p-5"> <span className="myBold"> Yeni Mekanlar Keşfet</span></h2>
+            <h2 className="m-5 p-5"> <span className="myBold">{t("discover-page.myBold-part")}</span></h2>
             <SearchBox />
             <CategoryItem
                 type="Popüler"

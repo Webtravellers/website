@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import './assets/scss/dijitalAsistan.scss'
 import { Provider } from 'react-redux';
 import { configureStore } from './store/configureStore';
+import './i18n';
+
 
 const root = ReactDOMClient.createRoot(document.getElementById("root"));
 const store = configureStore()
