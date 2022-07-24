@@ -100,6 +100,7 @@ const TopNavbar = () => {
                       <DropdownItem
                         key={lng}
                         type="submit"
+                        style={{ fontWeight: i18n.language === lng ? 'bold' : 'normal' }}
                         onClick={() => {
                           i18n.changeLanguage(lng);
                         }}
