@@ -1,7 +1,8 @@
 import api from "../../services/api";
-import { NEW_POST_FAIL, NEW_POST_REQUEST, NEW_POST_SUCCESS, CLEAR_ERRORS } from "../../constants/postConstants";
+import { ActionTypes } from "../actionTypes";
 import PostService from "../../services/postService";
 
+const { POST: { NEW_POST_FAIL, NEW_POST_REQUEST, NEW_POST_SUCCESS, CLEAR_ERRORS } } = ActionTypes
 
 // New Post
 export const addNewPost = (userId, postData) => async (dispatch) => {

@@ -6,6 +6,9 @@ class UserService {
         return api().get(url)
     }
 
+    getUserById(userId) {
+        return api().get(url + String(userId))
+    }
 
 }
 
