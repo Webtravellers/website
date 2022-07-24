@@ -11,7 +11,7 @@ const UsersListPage = () => {
         userService.getUsers().then(res => {
             setUsers(res.data.data)
         })
-    })
+    }, [])
 
 
 

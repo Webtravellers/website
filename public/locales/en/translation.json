@@ -1,0 +1,102 @@
+{
+    "title": "Welcome to react using react-i18next",
+    "home-page": {
+      "suggestion-h1-title-part": "Ankara Eymir Lake",
+      "suggestion-desc-part": "Lake Eymir is a magnificent lake located in Ankara province. The land belongs to Middle East Technical University. METU Sports Club Rowing and Sailing Teams are working area. The lake has its own unique fauna and flora. The name 'Eymir' is almost synonymous with METU.",
+      
+      "category-item-part": "Popular",
+
+      "forgotten-flavors-h1-part": "Forgotten Flavors",
+      "forgotten-flavors-desc-part": "While Turkish cuisine is home to rich and different flavors, we should not forget the little-known famous flavors. We have shared 20 little-known local flavors in Turkish cuisine for you. If you haven't tried these flavors, make sure you find a way!",
+
+      "top-museums-h1-part": "A Must Visit for Every Student 12 Museums",
+      "top-museums-desc-part": "Within the scope of the curriculum of the Ministry of National Education, we have planned for you the places that a primary, middle and high school student must visit.",
+      "top-museums-button-part": "For More"
+      
+    },
+
+    "top-navbar": {
+      "homepage": "HomePage",
+      "discover": "Discover",
+      "memories": "Memories",
+      "sign-up": "Sign Up",
+      "or": "Or",
+      "sign-in": "Sign In"
+    },
+
+    "footer": {
+      "suggestions": "Suggestions",
+      "contact": "Contact us",
+      "blog": "Blog",
+      "about-us": "About us",
+      "rights": "2022 All rights reserved."
+
+    },
+
+    "category-item": {
+      "button-part": "For more.."
+    },
+
+    "discover-page": {  
+      "myBold-part": "Discover New Location",
+
+      "Popüler": "Popular",
+      "Eğlence": "Entertainment",
+      "Müzeler": "Museums",
+      "Unutulmuş Lezzetler": "Forgotten Flavors",
+      "Doğal Güzellikler": "Natural Beauties"
+    },
+
+    "search-box": {
+      "placeholder-part" : "Search Location"
+    },
+
+    "location-page": {
+      "rating": "Rating",
+      "facilities": "Facilities",
+      "comments": "Comments from other users"
+    },
+
+    "individual-post-page": {
+      "comments": "Comments"
+    },
+
+    "sign-in-page": {
+      "email-is-required": "Email is required",
+      "not-valid-email": "Not valid e-mail",
+      "password-is-required": "Password is required",
+      
+      "sign-in": "Sign In",
+      "email": "E-mail",
+      "password": "Password",
+      "forgot-your-password": "Forgot your password?",
+      "sign-up": "Sign Up",
+
+      "accessing": "Signing..."
+    },
+
+    "sign-up-page": {
+      "email-is-required": "Email is required",
+      "not-valid-email": "Not valid e-mail",
+      "password-is-required": "Password is required",
+
+      "password-min-6": "The password must be at least 6 characters",
+      "is-mandatory": "This field is mandatory",
+      "min-3-word": "Must have at least 3 characters",
+      "max-16-word": "Maximum number of characters exceeded (16)",
+
+      "sign-up": "Register",
+      "name": "Name",
+      "name-example": "Example: Ata",
+      "surname": "Soyad",
+      "surname-example": "Example: Yılmaz",
+      "email": "E-mail",
+      "password": "Password",
+      "password-again": "Password Again",
+
+      "sign-up-button": "Sign Up",
+      "signing-up": "Signing Up...",
+      "have-an-account": "Do you already have an account?",
+      "login-now": "Log in now!"
+    }
+  }

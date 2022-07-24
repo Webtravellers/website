@@ -1,8 +1,11 @@
 import React from "react";
 import IndividualPost from "../components/IndividualPost";
 import PostComment from "../components/comments/PostComment"
+import { useTranslation } from "react-i18next";
+
 
 const IndividualPostPage = () => {
+    const { t, i18n } = useTranslation();
 
     return (
         <div className="w-100 d-flex flex-column align-items-center ">
@@ -15,7 +18,7 @@ const IndividualPostPage = () => {
                 />
             </div>
             <div className="w-75 p-3">
-                <h3>Yorumlar</h3>
+                <h3>{t("individual-post-page.comments")}</h3>
                 <PostComment
                     firstname="Marry"
                     lastname="Harry"

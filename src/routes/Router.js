@@ -7,7 +7,11 @@ import LocationPage from '../pages/LocationPage'
 import AccountPage from '../pages/user/AccountPage'
 import IndividualPostPage from '../pages/IndividualPostPage'
 import FilteringPage from '../pages/FilteringPage'
-
+import SigninPage from '../pages/auth/SigninPage'
+import SignupPage from '../pages/auth/SignupPage'
+import AuthLayout from '../layouts/AuthLayout'
+import ProtectedRoute from '../hoc/ProtectedRoute'
+import { ROLES } from '../contants'
 const AdminRouter = React.lazy(() => import("./AdminRouter"))
 
 const Router = () => {
@@ -15,11 +19,18 @@ const Router = () => {
         <Routes>
             <Route path='/' element={<BaseLayout />} >
                 <Route exact path='' element={<HomePage />} />
-                <Route exact path='location' element={<LocationPage />} />
+                <Route exact path='location/:id' element={<LocationPage />} />
                 <Route exact path='discover' element={<DiscoverPage />} />
-                <Route exact path='account' element={<AccountPage />} />
                 <Route exact path='post' element={<IndividualPostPage />} />
                 <Route exact path='filtering' element={<FilteringPage />} />
+                <Route path='users' element={<AuthLayout />}>
+                    <Route path='signup' element={<SignupPage />} />
+                    <Route path='signin' element={<SigninPage />} />
+                </Route>
+                {/*Giriş yapmış tüm kullanıcıların erişebileceği linkler */}
+                <Route element={<ProtectedRoute roles={Object.values(ROLES)} />}>
+                    <Route exact path='bi/:id' element={<AccountPage />} />
+                </Route>
             </Route>
             <Route path='dashboard/*' element={
                 <React.Suspense fallback={<p>...</p>}>
