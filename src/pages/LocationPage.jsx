@@ -12,7 +12,7 @@ const LocationPage = () => {
     const { id } = useParams()
     const [location, setLocation] = useState({})
     const [cities, setCities] = useState([])
-
+    const [comments, setComments] = useState(null)
 
 
     useEffect(() => {
@@ -20,6 +20,10 @@ const LocationPage = () => {
 
         locationService.getById(id).then(res => {
             setLocation(res.data.data)
+        })
+
+        locationService.getLocationComments(id).then(res => {
+            setComments(res.data.data)
         })
 
         const cityService = new CityService()
@@ -66,33 +70,18 @@ const LocationPage = () => {
             </div>
             <div className="w-75 m-5">
                 <h3>{t("location-page.comments")}</h3>
-                <LocationComment
-                    firstname="Melike Nur"
-                    lastname="Aydemir"
-                    comment="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus eligendi facilis, atque iste at, fuga, velit quo doloremque non molestias minus incidunt totam temporibus unde."
-                    time="20 m"
-                />
-
-                <LocationComment
-                    firstname="Melike Nur"
-                    lastname="Aydemir"
-                    comment="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus eligendi facilis, atque iste at, fuga, velit quo doloremque non molestias minus incidunt totam temporibus unde."
-                    time="20 m"
-                />
-                <LocationComment
-                    firstname="Melike Nur"
-                    lastname="Aydemir"
-                    comment="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus eligendi facilis, atque iste at, fuga, velit quo doloremque non molestias minus incidunt totam temporibus unde."
-                    time="20 m"
-                />
-                <LocationComment
-                    firstname="Melike Nur"
-                    lastname="Aydemir"
-                    comment="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus eligendi facilis, atque iste at, fuga, velit quo doloremque non molestias minus incidunt totam temporibus unde."
-                    time="20 m"
-                />
-
-
+                {
+                    comments?.map(comment => (
+                        <LocationComment
+                            firstname={comment.user.name}
+                            lastname={comment.user.lastname}
+                            comment={comment.comment}
+                            time={comment.date}
+                            photo={comment.user.photo}
+                            score={comment.score}
+                        />
+                    )) 
+                }
             </div>
 
         </div>

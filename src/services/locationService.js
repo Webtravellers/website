@@ -20,6 +20,10 @@ class LocationService {
     deleteLocation(id) {
         return api().delete(api_url + id)
     }
+
+    getLocationComments(id) {
+        return api().get(api_url + id + '/comments')
+    }
 }
 
 export default LocationService

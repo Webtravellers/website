@@ -8,7 +8,7 @@ class PostService {
     }
 
     getPostsByUser(userId) {
-        return api().get(`${api_url}/${userId}`)
+        return api().get(`${api_url}/getbyuser/${userId}`)
     }
 }
 
