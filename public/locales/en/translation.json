@@ -98,5 +98,14 @@
       "signing-up": "Signing Up...",
       "have-an-account": "Do you already have an account?",
       "login-now": "Log in now!"
+    },
+
+    "account-page" : {
+      "posting-button": "Share Post"
+    },
+
+    "user-page-header" : {
+      "followers": "Followers",
+      "following": "Following"
     }
   }

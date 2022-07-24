@@ -98,5 +98,14 @@
       "signing-up": "Hesap Oluşturuluyor...",
       "have-an-account": "Zaten bir hesabın mı var?",
       "login-now": "Hemen giriş yap!"
+    },
+
+    "account-page" : {
+      "posting-button": "Gönderi Paylaş"
+    },
+
+    "user-page-header" : {
+      "followers": "Takipçi",
+      "following": "Takip"
     }
   }

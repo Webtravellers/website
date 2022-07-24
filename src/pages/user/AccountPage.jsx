@@ -6,7 +6,11 @@ import NewPost from "../../components/user-page/NewPost";
 import { useSelector } from "react-redux";
 import UserService from "../../services/users";
 import PostService from "../../services/postService";
+import { useTranslation } from "react-i18next";
+
+
 const AccountPage = () => {
+    const { t, i18n } = useTranslation();
     const navigate = useNavigate()
     const [newPost, setNewPost] = useState(false)
     const [posts, setPosts] = useState([])
@@ -38,12 +42,12 @@ const AccountPage = () => {
             />
             <div className="d-flex justify-content-center my-margin300">
                 <div className="d-flex flex-column justify-content-center align-items-center w-75">
-                    <Button onClick={() => setNewPost(true)} className="bg-dark text-light">Gönderi Paylaş</Button>
+                    <Button onClick={() => setNewPost(true)} className="bg-dark text-light">{t("account-page.posting-button")}</Button>
                     <NewPost newPost={newPost} setNewPost={setNewPost} userId={userId} />
                     <div className="my-grid-cols-2 my-4 mb-8 text-center">
                         {
                             posts?.map(post => (
-                                <div className="d-flex ">
+                                <div className="d-flex pb-5">
                                     <img onClick={() => { navigate('/') }} className="p-1  cursor-pointer posts-in-profile" src={post.photo} alt="" />
                                 </div>
                             ))
