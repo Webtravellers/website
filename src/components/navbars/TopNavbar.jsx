@@ -72,9 +72,14 @@ import {
     DropdownItem
 } from 'reactstrap'
 import logo from "../../assets/scss/imgs/turkey-logo.png"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import useAuth from '../../hooks/useAuth'
 
 const TopNavbar = () => {
+    const { user, token } = useSelector(state => state.auth)
+    const { handleLogout } = useAuth()
+    const navigate = useNavigate()
     return (
         <div className='topnavbar'>
             <Navbar>
@@ -107,20 +112,40 @@ const TopNavbar = () => {
                         </div>
 
                         <Nav className='d-flex align-items-center '>
-                            <NavItem>
-                                <Link to="/users/signup" className='nav-link text-warning'>
-                                    Hesap Oluştur
-                                </Link>
-                            </NavItem>
-                            <div>
-                                Veya
-                            </div>
-                            <NavItem>
-                                <Link to="/users/signin" className='nav-link'>
+                            {!token ? (
+                                <>
+                                    <NavItem>
+                                        <Link to="/users/signup" className='nav-link text-warning'>
+                                            Hesap Oluştur
+                                        </Link>
+                                    </NavItem>
+                                    <div>
+                                        Veya
+                                    </div>
+                                    <NavItem>
+                                        <Link to="/users/signin" className='nav-link'>
 
-                                    Giriş Yap
-                                </Link>
-                            </NavItem>
+                                            Giriş Yap
+                                        </Link>
+                                    </NavItem>
+                                </>
+                            ) : (
+                                <>
+                                    <UncontrolledDropdown >
+                                        <DropdownMenu className='drop-down--menu'>
+                                            <DropdownItem onClick={() => navigate(`/bi/${user.username}`)}>
+                                                Hesabım
+                                            </DropdownItem>
+                                            <DropdownItem onClick={handleLogout} className="text-danger">
+                                                Çıkış Yap
+                                            </DropdownItem>
+                                        </DropdownMenu>
+                                        <DropdownToggle className='select-language'>
+                                            <i class="fa-solid fa-user"></i>
+                                        </DropdownToggle>
+                                    </UncontrolledDropdown>
+                                </>
+                            )}
                             <UncontrolledDropdown >
                                 <DropdownMenu className='drop-down--menu'>
                                     <DropdownItem onClick={"to do lated"}>

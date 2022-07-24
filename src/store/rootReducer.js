@@ -5,8 +5,8 @@ import { userReducer } from "./reducers/userReducer";
 
 const rootReducer = combineReducers({
     auth: authReducer,
-    user: userReducer,
-    newPost: newPostReducer
+    // user: userReducer,
+    // newPost: newPostReducer
 })
 
 export default rootReducer

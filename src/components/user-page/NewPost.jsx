@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { Modal, ModalBody, ModalHeader, Progress } from 'reactstrap';
-import { NEW_POST_RESET } from '../../constants/postConstants';
 import PostService from '../../services/postService';
 import { addNewPost, clearErrors } from '../../store/actions/postActions';
 
