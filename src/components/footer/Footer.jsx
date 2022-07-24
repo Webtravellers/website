@@ -11,7 +11,7 @@ const Footer = () => {
 
     return (
         <footer>
-            <div className='bg-tranparent'>
+            <div className='bg-transparent'>
                 <div className='pt-1'>
                     <section >
                         <Container>
