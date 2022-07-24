@@ -1,0 +1,102 @@
+{
+    "title": "Welcome to react using react-i18next in german",
+    "home-page": {
+      "suggestion-h1-title-part": "Ankara Eymir Gölü",
+      "suggestion-desc-part": "Eymir Gölü, Ankara il sınırları içinde yer alan muhteşem bir göldür. Arazisi Orta Doğu Teknik Üniversitesi'ne aittir. ODTÜ Spor Kulübü Kürek ve Yelken Takımları çalışma alanıdır. Göl kendine has bir fauna ve floraya sahiptir. 'Eymir' adı adeta ODTÜ ile özdeşleşmiştir.",
+      
+      "category-item-part": "Popüler",
+
+      "forgotten-flavors-h1-part": "Unutulmuş Tatlar",
+      "forgotten-flavors-desc-part": "Türk mutfağı birbirinden zengin ve farklı lezzetlere ev sahipliği yaparken az bilinen meşhur lezzetleri de unutmamak lazım. Sizin için Türk mutfağında az bilinen 20 yöresel lezzeti paylaştık. Eğer bu lezzetleri denemediyseniz mutlaka bir yolunu bulun!",
+
+      "top-museums-h1-part": "Her Öğrencinin Kesinlikle Gezmesi Gereken 12 Müze",
+      "top-museums-desc-part": "Milli Eğitim Bakanlığının ders müfredatı kapsamında bir ilkokul, ortaokul ve lise öğrencisinin mutlaka gitmesi gerek yerleri sizin için planladık.",
+      "top-museums-button-part": "Daha Fazlası için"
+
+    },
+
+    "top-navbar": {
+      "homepage": "Anasayfa",
+      "discover": "Keşfet",
+      "memories": "Hatıralar",
+      "sign-up": "Hesap Oluştur",
+      "or": "Veya",
+      "sign-in": "Giriş Yap"
+    },
+
+    "footer": {
+      "suggestions": "Öneriler",
+      "contact": "İletişim",
+      "blog": "Blog",
+      "about-us": "Hakkımızda",
+      "rights": "2022 Tüm hakları saklıdır."
+
+    },
+
+    "category-item": {
+      "button-part": "Daha Fazlası.."
+    },
+
+    "discover-page": {  
+      "myBold-part": "Yeni Mekanlar Keşfet",
+
+      "Popüler": "Popüler",
+      "Eğlence": "Eğlence",
+      "Müzeler": "Müzeler",
+      "Unutulmuş Lezzetler": "Unutulmuş Lezzetler",
+      "Doğal Güzellikler": "Doğal Güzellikler"
+    },
+
+    "search-box": {
+      "placeholder-part" : "Mekan Ara"
+    },
+
+    "location-page": {
+      "rating": "Puan",
+      "facilities": "İmkanlar",
+      "comments": "Diğer kullanıcıların yorumları"
+    },
+
+    "individual-post-page": {
+      "comments": "Yorumlar"
+    },
+
+    "sign-in-page": {
+      "email-is-required": "E-posta gereklidir",
+      "not-valid-email": "Geçerli e-posta değil",
+      "password-is-required": "Şifre gereklidir",
+
+      "sign-in": "Giriş Yap",
+      "email": "E-posta",
+      "password": "Şifre",
+      "forgot-your-password": "Şifreni unuttun mu?",
+      "sign-up": "Hesap Oluştur",
+
+      "accessing": "Giriş yapılıyor..."
+    },
+
+    "sign-up-page": {
+      "email-is-required": "E-posta gereklidir",
+      "not-valid-email": "Geçerli e-posta değil",
+      "password-is-required": "Şifre gereklidir",
+
+      "password-min-6": "Şifre en az 6 karakterden oluşmalıdır",
+      "is-mandatory": "Bu alan doldurulması zorunlu",
+      "min-3-word": "En az 3 karakterden oluşmalı",
+      "max-16-word": "Maksimum karakter sayısı aşıldı (16)",
+
+      "sign-up": "Kayıt Ol",
+      "name": "Ad",
+      "name-example": "Örnek: Ata",
+      "surname": "Soyad",
+      "surname-example": "Örnek: Yılmaz",
+      "email": "E-posta",
+      "password": "Şifre",
+      "password-again": "Şifre tekrar",
+
+      "sign-up-button": "Hesap Oluştur",
+      "signing-up": "Hesap Oluşturuluyor...",
+      "have-an-account": "Zaten bir hesabın mı var?",
+      "login-now": "Hemen giriş yap!"
+    }
+  }

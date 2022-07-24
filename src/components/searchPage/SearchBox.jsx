@@ -1,8 +1,11 @@
 import React from "react";
 import { ClickAwayListener } from "@mui/material";
 import { useEffect, useState } from 'react';
+import { useTranslation } from "react-i18next";
+
 
 const SearchBox = () => {
+    const { t, i18n } = useTranslation();
 
     const [locations, setUsers] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
@@ -21,7 +24,7 @@ const SearchBox = () => {
                     value={searchTerm}
                     /* onFocus={handleFocus} */
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    placeholder="Mekan Ara"
+                    placeholder={t("search-box.placeholder-part")}
                 />
                 {searchResult &&
                     <>

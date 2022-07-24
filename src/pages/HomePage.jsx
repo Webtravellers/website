@@ -8,7 +8,11 @@ import ForgottenFlavors from "../components/home-page/ForgottenFlavors.jsx";
 import { Button } from "reactstrap";
 import TopMuseums from "../components/home-page/TopMuseums";
 
+import { useTranslation, Trans } from "react-i18next";
+
 const HomePage = () => {
+  const { t, i18n } = useTranslation();
+
   const navigate = useNavigate();
   const [locations, setLocations] = useState([]);
   const popular = [];
@@ -39,14 +43,10 @@ const HomePage = () => {
         <div className="suggestion-container d-flex flex-row align-items-center">
           <div className="suggestion-part">
             <h1 className="suggestion-h1-part">
-              <span>Ankara Eymir Gölü</span>
+              {t("home-page.suggestion-h1-title-part")}
             </h1>
             <div className="suggestion-desc-part">
-              Eymir Gölü, Ankara il sınırları içinde yer alan muhteşem bir
-              göldür. Arazisi Orta Doğu Teknik Üniversitesi'ne aittir. ODTÜ Spor
-              Kulübü Kürek ve Yelken Takımları çalışma alanıdır. Göl kendine has
-              bir fauna ve floraya sahiptir. "Eymir” adı adeta ODTÜ ile
-              özdeşleşmiştir.
+              {t("home-page.suggestion-desc-part")}
             </div>
             <UserInfo userProfilePhoto="" />
           </div>
@@ -54,7 +54,7 @@ const HomePage = () => {
           <div className="suggestion-img-part">
             <img
               onClick={() => {
-                navigate("/location");
+                navigate("/location/62bee19d5fc6d2f78d28f5c3");
               }}
               className="suggestionIMG cursor-pointer"
               src={suggestionimg}
@@ -69,19 +69,16 @@ const HomePage = () => {
           // Kategori için
         }
 
-        <CategoryItem type="Popüler" locations={popular} />
+        <CategoryItem type={t("Popüler")} locations={popular} />
       </div>
 
       <div className="d-flex flex-column align-items-center pt-5 mt-5">
         {
           // Unutulmuş Tatlar için
         }
-        <h1 className="home-page-h1">Unutulmuş Tatlar</h1>
+        <h1 className="home-page-h1">{t("home-page.forgotten-flavors-h1-part")}</h1>
         <div className="forgotten-flavors-home-page">
-          Türk mutfağı birbirinden zengin ve farklı lezzetlere ev sahipliği
-          yaparken az bilinen meşhur lezzetleri de unutmamak lazım. Sizin için
-          Türk mutfağında az bilinen 20 yöresel lezzeti paylaştık. Eğer bu
-          lezzetleri denemediyseniz mutlaka bir yolunu bulun!
+          {t("home-page.forgotten-flavors-desc-part")}
         </div>
         <ForgottenFlavors />
       </div>
@@ -92,15 +89,13 @@ const HomePage = () => {
         }
         <div className="top-part">
           <h1 className="home-page-h1">
-            Her Öğrencinin Kesinlikle Gezmesi Gereken 12 Müze
+            {t("home-page.top-museums-h1-part")}
           </h1>
           <div className="top-part-home-page">
-            Milli Eğitim Bakanlığının ders müfredatı kapsamında bir ilkokul,
-            ortaokul ve lise öğrencisinin mutlaka gitmesi gerek yerleri sizin
-            için planladık.
+          {t("home-page.top-museums-desc-part")}
           </div>
           <Button className="category-item-button bg-dark text-light justify-self-end m-3">
-            Daha Fazlası için
+            {t("home-page.top-museums-button-part")}
           </Button>
         </div>
         <div>

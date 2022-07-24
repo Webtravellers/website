@@ -4,8 +4,11 @@ import { Container } from 'reactstrap'
 import { FaTwitter } from "react-icons/fa"
 import { FaInstagram } from "react-icons/fa"
 import { FaFacebook } from "react-icons/fa"
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+    const { t, i18n } = useTranslation();
+
     return (
         <footer>
             <div className='bg-tranparent'>
@@ -18,10 +21,10 @@ const Footer = () => {
                                         Bi'Hatıra
                                     </div>
                                     <div className=''>
-                                        <Link to="/suggestions" className='text-dark font-weight-light btn btn-link'>Öneriler</Link>
-                                        <Link to='/contact' className='text-dark font-weight-light btn btn-link'>İletişim</Link>
-                                        <Link to='/blog' className='text-dark font-weight-light btn btn-link'>Blog</Link>
-                                        <Link to='/about-us' className='text-dark font-weight-light btn btn-link'>Hakkımızda</Link>
+                                        <Link to="/suggestions" className='text-dark font-weight-light btn btn-link'>{t("footer.suggestions")}</Link>
+                                        <Link to='/contact' className='text-dark font-weight-light btn btn-link'>{t("footer.contact")}</Link>
+                                        <Link to='/blog' className='text-dark font-weight-light btn btn-link'>{t("footer.blog")}</Link>
+                                        <Link to='/about-us' className='text-dark font-weight-light btn btn-link'>{t("footer.about-us")}</Link>
 
                                     </div>
                                 </div>
@@ -32,7 +35,7 @@ const Footer = () => {
                                     </div>
                                     <div className="d-flex justify-content-center">
                                         <p className='text-dark display-5'>
-                                            &copy; 2022 All rights reserved.
+                                            &copy; {t("footer.rights")}
                                             <Link to="/" className="text-dark" >
                                                 &nbsp;Powered by <span className='text-orange'>Webtravellers</span>
                                             </Link>
