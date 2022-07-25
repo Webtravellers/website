@@ -54,6 +54,8 @@ const TopNavbar = () => {
                   </Link>
                 </NavItem>
               </Nav>
+            </div>
+            <div className="d-flex">
               <Nav className="d-flex align-items-center ">
                 {!token ? (
                   <>
