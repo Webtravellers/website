@@ -28,7 +28,7 @@ const AccountPage = () => {
             setPosts(res.data.data)
         })
 
-    }, [])
+    }, [posts])
 
 
     return (
