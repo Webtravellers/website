@@ -79,7 +79,7 @@ const TopNavbar = () => {
                     <UncontrolledDropdown>
                       <DropdownMenu className="drop-down--menu">
                         <DropdownItem
-                          onClick={() => navigate(`/bi/${user.username}`)}
+                          onClick={() => navigate(`/bi/${user._id}`)}
                         >
                           Hesabım
                         </DropdownItem>
@@ -91,7 +91,10 @@ const TopNavbar = () => {
                         </DropdownItem>
                       </DropdownMenu>
                       <DropdownToggle className="select-language">
-                        <i class="fa-solid fa-user"></i>
+                        <div className="d-flex flex-row">
+                          <div>{`${user?.name} ${user?.lastname}`}</div>
+                          <i className="fa-solid fa-user icon-topnavbar"></i>
+                        </div>
                       </DropdownToggle>
                     </UncontrolledDropdown>
                   </>

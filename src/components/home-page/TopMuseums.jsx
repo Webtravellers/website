@@ -35,7 +35,6 @@ const TopMuseums = () => {
     }
 
     divideLocations()
-    console.log(muzeler)
 
     return (
         <div className="top-museum-cards d-flex flex-row">

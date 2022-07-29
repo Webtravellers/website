@@ -12,6 +12,7 @@ import SignupPage from '../pages/auth/SignupPage'
 import AuthLayout from '../layouts/AuthLayout'
 import ProtectedRoute from '../hoc/ProtectedRoute'
 import { ROLES } from '../contants'
+import UpdateUserInfo from '../pages/user/UpdateUserInfo'
 const AdminRouter = React.lazy(() => import("./AdminRouter"))
 
 const Router = () => {
@@ -30,6 +31,9 @@ const Router = () => {
                 {/*Giriş yapmış tüm kullanıcıların erişebileceği linkler */}
                 <Route element={<ProtectedRoute roles={Object.values(ROLES)} />}>
                     <Route exact path='bi/:id' element={<AccountPage />} />
+                </Route>
+                <Route element={<ProtectedRoute roles={Object.values(ROLES)} />}>
+                    <Route exact path='/update' element={<UpdateUserInfo />} />
                 </Route>
             </Route>
             <Route path='dashboard/*' element={

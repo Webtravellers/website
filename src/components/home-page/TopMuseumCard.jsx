@@ -4,7 +4,6 @@ import { useNavigate } from "react-router";
 const TopMuseumCard = (props) => {
     const navigate = useNavigate()
     const locs = props.locations
-    console.log(locs)
 
     return (
 
