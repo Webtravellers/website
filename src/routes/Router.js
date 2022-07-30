@@ -33,7 +33,7 @@ const Router = () => {
                     <Route exact path='bi/:id' element={<AccountPage />} />
                 </Route>
                 <Route element={<ProtectedRoute roles={Object.values(ROLES)} />}>
-                    <Route exact path='/update' element={<UpdateUserInfo />} />
+                    <Route exact path='users/update' element={<UpdateUserInfo />} />
                 </Route>
             </Route>
             <Route path='dashboard/*' element={

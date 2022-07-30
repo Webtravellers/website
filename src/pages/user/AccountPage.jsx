@@ -48,7 +48,7 @@ const AccountPage = () => {
               {t("account-page.posting-button")}
             </Button>
             <Button
-              onClick={() => navigate(`/update`)}
+              onClick={() => navigate(`/users/update`)}
               className="text-light"
               color="info"
             >
