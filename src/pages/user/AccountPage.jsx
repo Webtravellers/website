@@ -23,7 +23,6 @@ const AccountPage = () => {
         userService.getUserById(String(userId)).then(res => {
             setUser(res.data.data)
         })
-
         postService.getPostsByUser(String(userId)).then(res => {
             setPosts(res.data.data)
         })
@@ -48,7 +47,7 @@ const AccountPage = () => {
                         {
                             posts?.map(post => (
                                 <div className="d-flex pb-5">
-                                    <img onClick={() => { navigate('/') }} className="p-1  cursor-pointer posts-in-profile" src={post.photo} alt="" />
+                                    <img onClick={() => { navigate(`posts/${post._id}`) }} className="p-1  cursor-pointer posts-in-profile" src={post.photo} alt="" />
                                 </div>
                             ))
                         }

@@ -21,7 +21,7 @@ const Router = () => {
                 <Route exact path='' element={<HomePage />} />
                 <Route exact path='location/:id' element={<LocationPage />} />
                 <Route exact path='discover' element={<DiscoverPage />} />
-                <Route exact path='post' element={<IndividualPostPage />} />
+                <Route exact path='bi/:userid/posts/:postid' element={<IndividualPostPage />} />
                 <Route exact path='filtering' element={<FilteringPage />} />
                 <Route path='users' element={<AuthLayout />}>
                     <Route path='signup' element={<SignupPage />} />

@@ -10,6 +10,10 @@ class PostService {
     getPostsByUser(userId) {
         return api().get(`${api_url}/getbyuser/${userId}`)
     }
+
+    getPostsByPostID(postID) {
+        return api().get(`${api_url}/${postID}`)
+    }
 }
 
 export default PostService 
