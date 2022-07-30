@@ -32,30 +32,17 @@ const IndividualPostPage = () => {
             </div>
             <div className="w-75 p-3">
                 <h3>{t("individual-post-page.comments")}</h3>
-                <PostComment
-                    firstname="Marry"
-                    lastname="Harry"
-                    time="13 m"
-                    comment="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ea repudiandae perspiciatis ad officia dolorum consequuntur"
-                />
-                <PostComment
-                    firstname="Marry"
-                    lastname="Harry"
-                    time="13 m"
-                    comment="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ea repudiandae perspiciatis ad officia dolorum consequuntur"
-                />
-                <PostComment
-                    firstname="Marry"
-                    lastname="Harry"
-                    time="13 m"
-                    comment="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ea repudiandae perspiciatis ad officia dolorum consequuntur"
-                />
-                <PostComment
-                    firstname="Marry"
-                    lastname="Harry"
-                    time="13 m"
-                    comment="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ea repudiandae perspiciatis ad officia dolorum consequuntur"
-                />
+                {
+                    !post.comments ? post?.comments?.map((comment) => {
+                        <PostComment
+                            firstname={comment.user}
+                            lastname={comment.user}
+                            time={comment.date}
+                            comment={comment.comment}
+                        />
+                    }) : <p> There is no comment for this post yet!</p>
+
+                }
             </div>
         </div>
     )
