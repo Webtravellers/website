@@ -43,6 +43,7 @@ const AccountPage = () => {
                 <div className="d-flex flex-column justify-content-center align-items-center w-75">
                     <Button onClick={() => setNewPost(true)} className="bg-dark text-light">{t("account-page.posting-button")}</Button>
                     <NewPost newPost={newPost} setNewPost={setNewPost} userId={userId} />
+                    <Button onClick={() => navigate('trips')}> Trips </Button> {/* translate */}
                     <div className="my-grid-cols-2 my-4 mb-8 text-center">
                         {
                             posts?.map(post => (
