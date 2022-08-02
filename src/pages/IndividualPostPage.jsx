@@ -10,24 +10,32 @@ const IndividualPostPage = () => {
     const { t, i18n } = useTranslation();
     const { postid } = useParams()
     const [post, setPost] = useState({})
+    const postService = new PostService()
+    const [loading, setLoading] = useState(0)
 
     useEffect(() => {
-        const postService = new PostService()
         postService.getPostsByPostID(postid).then(res => {
             setPost(res.data.data)
         })
-    }, [])
-    console.log(post);
+    }, [loading])
+
+    if (post?.likes) {
+        var numberOfLikes = post.likes.length
+    }
+
+    console.log(numberOfLikes);
     return (
         <div className="w-100 d-flex flex-column align-items-center ">
             <div className="w-75 ">
                 <IndividualPost
                     postPhoto={post.photo}
                     userPhoto=""
-                    likes={post?.likes}
+                    likes={numberOfLikes}
                     comments={post?.comments}
                     postDate={post?.createdAt?.slice(0, 10)}
                     postText={post?.caption}
+                    postId={postid}
+                    anchor={setLoading}
                 />
             </div>
             <div className="w-75 p-3">

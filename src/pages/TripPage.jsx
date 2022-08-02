@@ -14,27 +14,31 @@ const TripPage = () => {
     const [locations, setLocations] = useState([])
     const tripService = new TripService()
     const locationService = new LocationService()
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+        if (!loading) return
         tripService.getTripByTripId(userId, tripId).
             then(res => {
+                setLoading(false)
                 setTrip(res.data.data)
-                console.log(trip);
+                console.log(res.data.data);
             })
         locationService.getLocations().then(res => {
             setLocations(res.data.data)
+            console.log(res.data.data);
         })
-    }, [])
+    }, [loading])
 
-    useEffect(() => {
-
-    }, [trip.locations])
 
     const handleAddLocation = (location) => {
+        setLoading(true)
         tripService.addLocationToTrip(userId, tripId, { location })
+        console.log(userId, tripId, { location });
     }
 
     const handleRemoveLocation = (locationId) => {
+        setLoading(true)
         tripService.removeLocationFromTrip(userId, tripId, locationId)
     }
 
@@ -43,31 +47,31 @@ const TripPage = () => {
     return (
         <>
             <div className="d-flex flex-column justify-content-center align-items-center">
-                <h3>{trip.name}</h3>
+                <h3>{trip?.name}</h3>
                 <div>
                     <h4> Locations that already in your trip</h4>
                     {
-                        trip.locations?.map((location) => (
-                            <p>{location}</p>
+                        trip?.locations?.map((location) => (
+                            <p>{location.name}</p>
                         ))
                     }
                 </div>
 
-                <div>
+                {/* <div>
                     <h4> Browse All Locations To Add Your Trip</h4>
                     {
                         locations?.map((location) => (
                             <div className="d-flex m-2 p-2 justify-content-center align-items-center">
-                                <p>{location.name}</p>
+                                <p>{location?.name}</p>
                                 {
-                                    trip.locations.includes(location._id) ? <Button onClick={() => handleRemoveLocation(location._id)} className="bg-danger"> - </Button>
+                                    trip?.locations?.some(x => x._id === location?._id) ? <Button onClick={() => handleRemoveLocation(location._id)} className="bg-danger"> - </Button>
                                         : <Button onClick={() => handleAddLocation(location._id)} className="bg-success"> + </Button>
                                 }
 
                             </div>
                         ))
                     }
-                </div>
+                </div> */}
 
             </div>
         </>

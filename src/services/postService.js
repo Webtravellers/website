@@ -14,6 +14,12 @@ class PostService {
     getPostsByPostID(postID) {
         return api().get(`${api_url}/${postID}`)
     }
+    handleLikeEvent(postId, userId) {
+        return api().post(`${api_url}/${postId}/${userId}`)
+    }
+    newCommentAtPost(postId, data) {
+        return api().post(`${api_url}/${postId}/comments`, data)
+    }
 }
 
 export default PostService 
