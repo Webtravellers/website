@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { Button } from "reactstrap";
 import LocationService from "../services/locationService";
 import TripService from "../services/tripService";
+import { BiMap } from "../utils/map";
 
 
 const TripPage = () => {
@@ -28,8 +29,19 @@ const TripPage = () => {
             setLocations(res.data.data)
             console.log(res.data.data);
         })
+
+
     }, [loading])
 
+    useEffect(() => {
+        if (trip.locations) {
+            let map = new BiMap()
+            map.init(document.getElementById('routerMap'))
+            map.render()
+            if (trip.locations.length > 1)
+                map.calculateAndDisplayRoute(trip.locations.map(l => l.location.coordinates), BiMap.MODE.DRIVING)
+        }
+    }, [trip])
 
     const handleAddLocation = (location) => {
         setLoading(true)
@@ -72,7 +84,9 @@ const TripPage = () => {
                         ))
                     }
                 </div> */}
+                <div id="routerMap" >
 
+                </div>
             </div>
         </>
     )
