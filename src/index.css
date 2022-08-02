@@ -167,6 +167,7 @@ code {
 
 .post-photo {
   min-width: 100%;
+  max-width: 101%;
 }
 
 .my-filter-text {
@@ -234,7 +235,6 @@ code {
   display: grid;
   grid-gap: 50px;
   grid-template-columns: repeat(4, 1fr);
-  height: 150px;
   width: auto;
 }
 

@@ -13,6 +13,8 @@ import AuthLayout from '../layouts/AuthLayout'
 import ProtectedRoute from '../hoc/ProtectedRoute'
 import { ROLES } from '../contants'
 import UpdateUserInfo from '../pages/user/UpdateUserInfo'
+import TripsPage from '../pages/TripsPage'
+import TripPage from '../pages/TripPage'
 const AdminRouter = React.lazy(() => import("./AdminRouter"))
 
 const Router = () => {
@@ -22,7 +24,7 @@ const Router = () => {
                 <Route exact path='' element={<HomePage />} />
                 <Route exact path='location/:id' element={<LocationPage />} />
                 <Route exact path='discover' element={<DiscoverPage />} />
-                <Route exact path='post' element={<IndividualPostPage />} />
+                <Route exact path='bi/:userid/posts/:postid' element={<IndividualPostPage />} />
                 <Route exact path='filtering' element={<FilteringPage />} />
                 <Route path='users' element={<AuthLayout />}>
                     <Route path='signup' element={<SignupPage />} />
@@ -32,6 +34,8 @@ const Router = () => {
                 <Route element={<ProtectedRoute roles={Object.values(ROLES)} />}>
                     <Route exact path='bi/:id' element={<AccountPage />} />
                     <Route exact path='bi/:id/update' element={<UpdateUserInfo />} />
+                    <Route exact path='bi/:id/trips' element={<TripsPage />} />
+                    <Route exact path='bi/:id/trips/:tripId' element={<TripPage />} />
                 </Route>
             </Route>
             <Route path='dashboard/*' element={

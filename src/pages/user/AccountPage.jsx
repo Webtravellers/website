@@ -25,7 +25,6 @@ const AccountPage = () => {
     userService.getUserById(String(userId)).then((res) => {
       setUser(res.data.data);
     });
-
     postService.getPostsByUser(String(userId)).then((res) => {
       setPosts(res.data.data);
     });
@@ -56,6 +55,7 @@ const AccountPage = () => {
             </Button>
           </div>
           <NewPost newPost={newPost} setNewPost={setNewPost} userId={userId} />
+          <Button onClick={() => navigate('trips')}> Trips </Button> {/* translate */}
           <div className="my-grid-cols-2 my-4 mb-8 text-center">
             {posts?.map((post) => (
               <div className="d-flex pb-5">

@@ -9,7 +9,7 @@ const CategoryItem = (props) => {
     const navigate = useNavigate()
     const categoryType = props.type
     const locs = props.locations
-    
+
     return (
 
         <div className="d-flex flex-column m-5">
@@ -36,7 +36,7 @@ const CategoryItem = (props) => {
                     <p className="discover-page-item-text">{locs[4]?.name}</p>
                 </div>
                 <div className="category-item d-flex flex-column align-items-center">
-                    <img onClick={() => { navigate("/location" + locs[5]._id) }} className="m-3 cursor-pointer hover-overlay discover-page-items" src={locs[5]?.photos[0]} alt="" />
+                    <img onClick={() => { navigate("/location/" + locs[5]._id) }} className="m-3 cursor-pointer hover-overlay discover-page-items" src={locs[5]?.photos[0]} alt="" />
                     <p className="discover-page-item-text">{locs[5]?.name}</p>
                 </div>
             </div>
