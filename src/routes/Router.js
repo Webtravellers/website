@@ -31,9 +31,7 @@ const Router = () => {
                 {/*Giriş yapmış tüm kullanıcıların erişebileceği linkler */}
                 <Route element={<ProtectedRoute roles={Object.values(ROLES)} />}>
                     <Route exact path='bi/:id' element={<AccountPage />} />
-                </Route>
-                <Route element={<ProtectedRoute roles={Object.values(ROLES)} />}>
-                    <Route exact path='users/update' element={<UpdateUserInfo />} />
+                    <Route exact path='bi/:id/update' element={<UpdateUserInfo />} />
                 </Route>
             </Route>
             <Route path='dashboard/*' element={

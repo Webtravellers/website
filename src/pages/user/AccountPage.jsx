@@ -21,6 +21,7 @@ const AccountPage = () => {
   useEffect(() => {
     const userService = new UserService();
     const postService = new PostService();
+    
     userService.getUserById(String(userId)).then((res) => {
       setUser(res.data.data);
     });
@@ -29,7 +30,6 @@ const AccountPage = () => {
       setPosts(res.data.data);
     });
   }, [posts]);
-
   return (
     <div>
       <UserPageHeader
@@ -48,7 +48,7 @@ const AccountPage = () => {
               {t("account-page.posting-button")}
             </Button>
             <Button
-              onClick={() => navigate(`/users/update`)}
+              onClick={() => navigate(`/bi/${userId}/update`)}
               className="text-light"
               color="info"
             >

@@ -1,16 +1,15 @@
 import React from "react";
 import { Container, Row } from "reactstrap";
-// import "./Screen.css";
 
 function MainScreen({ children, title }) {
   return (
-    <div className="mainback">
+    <div className="mainback d-flex flex-column justify-content-center align-items-center">
       <Container>
         <Row>
           <div className="page">
             {title && (
               <>
-                <h1 className="heading">{title}</h1>
+                <h1 className="heading d-flex justify-content-center">{title}</h1>
                 <hr />
               </>
             )}
