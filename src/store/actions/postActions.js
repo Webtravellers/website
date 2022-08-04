@@ -20,6 +20,10 @@ export const addNewPost = (userId, postData) => async (dispatch) => {
         })
 }
 
+export const handleLikePost = async (postId, userId) => {
+
+}
+
 // Clear All Errors
 export const clearErrors = () => (dispatch) => {
     dispatch({ type: CLEAR_ERRORS });
