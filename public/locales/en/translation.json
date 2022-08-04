@@ -21,7 +21,10 @@
       "memories": "Memories",
       "sign-up": "Sign Up",
       "or": "Or",
-      "sign-in": "Sign In"
+      "sign-in": "Sign In",
+
+      "my-account": "My Account",
+      "sign-out": "Log Out"
     },
 
     "footer": {
@@ -88,7 +91,7 @@
       "sign-up": "Register",
       "name": "Name",
       "name-example": "Example: Ata",
-      "surname": "Soyad",
+      "surname": "Last Name",
       "surname-example": "Example: Yılmaz",
       "email": "E-mail",
       "password": "Password",
@@ -101,11 +104,47 @@
     },
 
     "account-page" : {
-      "posting-button": "Share Post"
+      "posting-button": "Share Post",
+      "edit-profile": "Edit Profile",
+      "trips": "Trips"
     },
 
     "user-page-header" : {
       "followers": "Followers",
       "following": "Following"
+    },
+
+    "update-user-info-page" : {
+      "name": "Name",
+      "name-placeholder": "Enter Name",
+      "lastname": "Last Name",
+      "lastname-placeholder": "Enter Last Name",
+      "email": "E-mail adress",
+      "email-placeholder": "Enter E-mail adress",
+      "change-profile-photo": "Change Profile Picture"
+    },
+
+    "trip-page": {
+      "h4-part1" : "Locations that already in your trip",
+      "h4-part2" : "Browse All Locations To Add Your Trip"
+    },
+
+    "trips-page": {
+      "h3": "Trip page",
+      "add-button": "New Trip"
+    },
+
+    "new-trip-component": {
+      "create-new-trip": "Create New Trip",
+      "trip-name": "Trip Name",
+      "start-date": "Start Date",
+      "end-date": "End Date",
+      "continue-button": "Continue",
+      "cancel-button": "Cancel"
+    },
+
+    "trips-container": {
+      "go-to-trip-button": "Go To Trip"
     }
+
   }

@@ -32,6 +32,9 @@ const DiscoverPage = () => {
             else if (locations[i]?.type[0]?.name === "Eğlence") {
                 eglence.push(locations[i])
             }
+            else if (locations[i]?.type[0]?.name === "Unutulmuş lezzetler") {
+                unutulmuşLezzetler.push(locations[i])
+            }
         }
 
 

@@ -1,11 +1,9 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import {
   Container,
   Nav,
   Navbar,
   NavItem,
-  Row,
-  NavbarBrand,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -16,6 +14,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useAuth from "../../hooks/useAuth";
 import { useTranslation } from "react-i18next";
+import UserService from "../../services/users";
 
 const lngs = {
   tr: { nativeName: "Türkçe" },
@@ -27,6 +26,7 @@ const TopNavbar = () => {
   const { user, token } = useSelector((state) => state.auth);
   const { handleLogout } = useAuth();
   const navigate = useNavigate();
+  
   return (
     <div className="topnavbar">
       <Navbar>
@@ -79,19 +79,22 @@ const TopNavbar = () => {
                     <UncontrolledDropdown>
                       <DropdownMenu className="drop-down--menu">
                         <DropdownItem
-                          onClick={() => navigate(`/bi/${user.username}`)}
+                          onClick={() => navigate(`/bi/${user._id}`)}
                         >
-                          Hesabım
+                          {t("top-navbar.my-account")}
                         </DropdownItem>
                         <DropdownItem
                           onClick={handleLogout}
                           className="text-danger"
                         >
-                          Çıkış Yap
+                          {t("top-navbar.sign-out")}
                         </DropdownItem>
                       </DropdownMenu>
                       <DropdownToggle className="select-language">
-                        <i class="fa-solid fa-user"></i>
+                        <div className="d-flex flex-row">
+                          <div>{`${user?.name} ${user?.lastname}`}</div>
+                          <i className="fa-solid fa-user icon-topnavbar"></i>
+                        </div>
                       </DropdownToggle>
                     </UncontrolledDropdown>
                   </>
@@ -112,7 +115,7 @@ const TopNavbar = () => {
                     ))}
                   </DropdownMenu>
                   <DropdownToggle className="select-language">
-                    <i class="fa-solid fa-language language"></i>
+                    <i className="fa-solid fa-language language"></i>
                   </DropdownToggle>
                 </UncontrolledDropdown>
               </Nav>
