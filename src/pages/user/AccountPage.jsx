@@ -21,7 +21,7 @@ const AccountPage = () => {
   useEffect(() => {
     const userService = new UserService();
     const postService = new PostService();
-    
+
     userService.getUserById(String(userId)).then((res) => {
       setUser(res.data.data);
     });
@@ -51,14 +51,14 @@ const AccountPage = () => {
               className="text-light"
               color="info"
             >
-              Profili Düzenle
+              {t("account-page.edit-profile")}
             </Button>
           </div>
           <NewPost newPost={newPost} setNewPost={setNewPost} userId={userId} />
-          <Button onClick={() => navigate('trips')}> Trips </Button> {/* translate */}
+          <Button onClick={() => navigate("trips")}> {t("account-page.trips")} </Button>{" "}
           <div className="my-grid-cols-2 my-4 mb-8 text-center">
             {posts?.map((post) => (
-              <div className="d-flex pb-5">
+              <div className="d-flex pb-5" key={post._id}>
                 <img
                   onClick={() => {
                     navigate("/");

@@ -5,8 +5,11 @@ import { toast } from "react-toastify";
 import UserService from "../../services/users";
 import UpdateInfoService from "../../services/updateInfoService";
 import MainScreen from "../../components/updateUserScreen/MainScreen";
+import { useTranslation } from "react-i18next";
+
 
 const UpdateUserInfo = () => {
+  const { t, i18n } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({});
   const [name, setName] = useState("");
@@ -38,7 +41,6 @@ const UpdateUserInfo = () => {
     setPhotoPreview("");
     reader.onload = () => {
       if (reader.readyState === 2) {
-        console.log(reader);
         setPhotoPreview(reader.result);
       }
     };
@@ -76,7 +78,6 @@ const UpdateUserInfo = () => {
         setLoading(false);
       });
   };
-  console.log(user);
 
   return (
     <MainScreen title="EDIT PROFILE">
@@ -85,28 +86,28 @@ const UpdateUserInfo = () => {
           <Col md={5}>
             <Form onSubmit={submitHandler}>
               <FormGroup>
-                <Label>Name</Label>
+                <Label>{t("update-user-info-page.name")}</Label>
                 <Input
                   type="text"
-                  placeholder="Enter Name"
+                  placeholder={t("update-user-info-page.name-placeholder")}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 ></Input>
               </FormGroup>
               <FormGroup>
-                <Label>Last Name</Label>
+                <Label>{t("update-user-info-page.lastname")}</Label>
                 <Input
                   type="text"
-                  placeholder="Enter Last Name"
+                  placeholder={t("update-user-info-page.lastname-placeholder")}
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                 ></Input>
               </FormGroup>
               <FormGroup>
-                <Label>Email Address</Label>
+                <Label>{t("update-user-info-page.email")}</Label>
                 <Input
                   type="email"
-                  placeholder="Enter Email"
+                  placeholder={t("update-user-info-page.email-placeholder")}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 ></Input>
@@ -149,7 +150,7 @@ const UpdateUserInfo = () => {
                         fill="currentColor"
                       ></path>
                     </svg>
-                    <Label>Change Profile Picture</Label>
+                    <Label>{t("update-user-info-page.change-profile-photo")}</Label>
                     <Input
                       onChange={handleFileChange}
                       accept="image/*"
