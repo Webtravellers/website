@@ -8,7 +8,6 @@ import { useTranslation } from "react-i18next";
 
 const DiscoverPage = () => {
     const { t, i18n } = useTranslation();
-
     const [locations, setLocations] = useState([])
     const dogalGuzellikler = []
     const eglence = []
@@ -45,7 +44,7 @@ const DiscoverPage = () => {
 
         <div className="d-flex flex-column align-items-center">
             <h2 className="m-5 p-5"> <span className="myBold">{t("discover-page.myBold-part")}</span></h2>
-            <SearchBox />
+            <SearchBox placeholder={t("search-box.placeholder-part")} data={locations}/>
             <CategoryItem
                 type="Popüler"
                 locations={muzeler}
