@@ -5,8 +5,10 @@ import { Button } from "reactstrap";
 import LocationService from "../services/locationService";
 import TripService from "../services/tripService";
 import { BiMap } from "../utils/map";
+import { useTranslation } from "react-i18next";
 
 const TripPage = () => {
+  const { t, i18n } = useTranslation();
   const { tripId } = useParams();
   const {
     user: { _id: userId },
@@ -58,14 +60,15 @@ const TripPage = () => {
       <div className="d-flex flex-column justify-content-center align-items-center">
         <h3>{trip?.name}</h3>
         <div>
-          <h4> Locations that already in your trip</h4>
+          <h4>{t("trip-page.h4-part1")}</h4>
           {trip?.locations?.map((location) => (
             <p>{location.name}</p>
           ))}
         </div>
 
         <div>
-          <h4> Browse All Locations To Add Your Trip</h4>
+            <h4>{t("trip-page.h4-part2")}</h4>
+
           {
                         locations?.map((location) => (
                             <div className="d-flex m-2 p-2 justify-content-center align-items-center">
@@ -82,6 +85,7 @@ const TripPage = () => {
         <div id="routerMap"></div>
       </div>
     </>
+
   );
 };
 

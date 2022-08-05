@@ -21,7 +21,10 @@
       "memories": "Hatıralar",
       "sign-up": "Hesap Oluştur",
       "or": "Veya",
-      "sign-in": "Giriş Yap"
+      "sign-in": "Giriş Yap",
+
+      "my-account": "Hesabım",
+      "sign-out": "Çıkış Yap"
     },
 
     "footer": {
@@ -101,11 +104,46 @@
     },
 
     "account-page" : {
-      "posting-button": "Gönderi Paylaş"
+      "posting-button": "Gönderi Paylaş",
+      "edit-profile": "Profili Düzenle",
+      "trips": "Geziler"
     },
 
     "user-page-header" : {
       "followers": "Takipçi",
       "following": "Takip"
+    },
+
+    "update-user-info-page" : {
+      "name": "Ad",
+      "name-placeholder": "Ad Girin",
+      "lastname": "Soyad",
+      "lastname-placeholder": "Soyad Girin",
+      "email": "E-posta adresi",
+      "email-placeholder": "E-posta adresi Girin",
+      "change-profile-photo": "Profil Resmini Değiştir"
+    },
+
+    "trip-page": {
+      "h4-part1" : "Halihazırda seyahatinizde olan yerler",
+      "h4-part2" : "Seyahatinizi Eklemek İçin Tüm Lokasyonlara Göz Atın"
+    },
+
+    "trips-page": {
+      "h3": "Gezi Sayfası",
+      "add-button": "Yeni Gezi"
+    },
+
+    "new-trip-component": {
+      "create-new-trip": "Yeni Gezi Oluştur",
+      "trip-name": "Gezi Adı",
+      "start-date": "Başlangıç Tarihi",
+      "end-date": "Bitiş Tarihi",
+      "continue-button": "Devam et",
+      "cancel-button": "İptal"
+    },
+
+    "trips-container": {
+      "go-to-trip-button": "Geziye Git"
     }
   }

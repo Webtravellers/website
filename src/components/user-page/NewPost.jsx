@@ -33,6 +33,7 @@ const NewPost = ({ newPost, setNewPost, userId }) => {
 
         reader.readAsDataURL(e.target.files[0]);
         setPostImage(e.target.files[0]);
+
     }
 
     const newPostSubmitHandler = (e) => {
