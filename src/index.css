@@ -416,3 +416,8 @@ code {
 .opacity-40 {
   opacity: 0.4;
 }
+
+#routerMap {
+  height: 500px;
+  width: 500px;
+}

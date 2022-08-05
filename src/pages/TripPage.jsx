@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { Button } from "reactstrap";
 import LocationService from "../services/locationService";
 import TripService from "../services/tripService";
+import { BiMap } from "../utils/map";
 import { useTranslation } from "react-i18next";
 
 const TripPage = () => {
@@ -31,6 +32,18 @@ const TripPage = () => {
     });
   }, [loading]);
 
+  useEffect(() => {
+    if (trip.locations) {
+      let map = new BiMap();
+      map.init(document.getElementById("routerMap"));
+      if (trip.locations.length > 1)
+        map.calculateAndDisplayRoute(
+          trip.locations.map((l) => l.location.coordinates),
+          BiMap.MODE.DRIVING
+        );
+    }
+  }, [trip]);
+
   const handleAddLocation = (location) => {
     setLoading(true);
     tripService.addLocationToTrip(userId, tripId, { location });
@@ -43,42 +56,36 @@ const TripPage = () => {
   };
 
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center">
-      <h3>{trip?.name}</h3>
-      <div>
-        <h4>{t("trip-page.h4-part1")}</h4>
-        {trip?.locations?.map((location) => (
-          <p>{location.name}</p>
-        ))}
-      </div>
+    <>
+      <div className="d-flex flex-column justify-content-center align-items-center">
+        <h3>{trip?.name}</h3>
+        <div>
+          <h4>{t("trip-page.h4-part1")}</h4>
+          {trip?.locations?.map((location) => (
+            <p>{location.name}</p>
+          ))}
+        </div>
 
-      <div>
-        <h4>{t("trip-page.h4-part2")}</h4>
+        <div>
+            <h4>{t("trip-page.h4-part2")}</h4>
 
-        {locations?.map((location) => (
-          <div className="d-flex m-2 p-2 justify-content-center align-items-center">
-            <p>{location?.name}</p>
-            {trip?.locations?.some((x) => x._id === location?._id) ? (
-              <Button
-                onClick={() => handleRemoveLocation(location._id)}
-                className="bg-danger"
-              >
-                {" "}
-                -{" "}
-              </Button>
-            ) : (
-              <Button
-                onClick={() => handleAddLocation(location._id)}
-                className="bg-success"
-              >
-                {" "}
-                +{" "}
-              </Button>
-            )}
-          </div>
-        ))}
+          {
+                        locations?.map((location) => (
+                            <div className="d-flex m-2 p-2 justify-content-center align-items-center">
+                                <p>{location?.name}</p>
+                                {
+                                    trip?.locations?.some(x => x._id === location?._id) ? <Button onClick={() => handleRemoveLocation(location._id)} className="bg-danger"> - </Button>
+                                        : <Button onClick={() => handleAddLocation(location._id)} className="bg-success"> + </Button>
+                                }
+
+                            </div>
+                        ))
+                    }
+        </div>
+        <div id="routerMap"></div>
       </div>
-    </div>
+    </>
+
   );
 };
 
