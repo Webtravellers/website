@@ -3,18 +3,30 @@ const directionsService = new google.maps.DirectionsService();
 const directionsRenderer = new google.maps.DirectionsRenderer();
 console.log(directionsRenderer);
 let map;
-
+const initialOptions = {
+  zoom: 11,
+  center: {
+    lat: 39.91,
+    lng: 32.80
+  }
+}
 export class BiMap {
-  constructor() {}
+  constructor() { }
 
-  init(element) {
+  init(element, options = initialOptions) {
     map = new google.maps.Map(element, {
-      zoom: 11,
-      center: { lat: 39.91, lng: 32.8 },
+      zoom: options.zoom,
+      center: options.center,
     });
     directionsRenderer.setMap(map);
   }
 
+  addMarker(position) {
+    const marker = new google.maps.Marker({
+      position: position,
+      map: map
+    })
+  }
   calculateAndDisplayRoute(wayPoints, mode) {
     const points = wayPoints.map((p) => {
       return {

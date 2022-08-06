@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route } from 'react-router'
+import { Routes, Route, Outlet } from 'react-router'
 import BaseLayout from '../layouts/BaseLayout'
 import DiscoverPage from '../pages/DiscoverPage'
 import HomePage from '../pages/HomePage'
@@ -15,6 +15,7 @@ import { ROLES } from '../contants'
 import UpdateUserInfo from '../pages/user/UpdateUserInfo'
 import TripsPage from '../pages/TripsPage'
 import TripPage from '../pages/TripPage'
+import MapView from '../components/map/MapView'
 const AdminRouter = React.lazy(() => import("./AdminRouter"))
 
 const Router = () => {
@@ -43,6 +44,9 @@ const Router = () => {
                     <AdminRouter />
                 </React.Suspense>
             } />
+            <Route path='map' element={<Outlet />}>
+                <Route exact path='view' element={<MapView />}></Route>
+            </Route>
         </Routes>
     )
 }
