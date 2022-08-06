@@ -71,7 +71,7 @@ const LocationListPage = () => {
                                         <DropdownMenu
                                             aria-labelledby="navbar-default_dropdown_1"
                                             className="dropdown-menu-arrow"
-                                            right
+                                            end
                                         >
                                             <DropdownItem onClick={() => navigate("update/" + location._id)}>Update</DropdownItem>
                                             <DropdownItem divider />

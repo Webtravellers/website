@@ -1,95 +1,180 @@
-import React from "react"
-import { Button, DropdownToggle, DropdownMenu, DropdownItem, UncontrolledDropdown } from "reactstrap"
-import { useNavigate } from "react-router"
+import React, { useEffect } from "react";
+import { Formik } from "formik";
+import {
+  Button,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  UncontrolledDropdown,
+  Col,
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Row,
+} from "reactstrap";
+import { useLocation, useNavigate } from "react-router";
+import { useState } from "react";
+import CityService from "../../services/cityService";
+import LocationService from "../../services/locationService";
+import LocationTypeService from "../../services/locationTypeService";
 
 const FilterLeftSide = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
+  const location = useLocation()
+  const [cities, setCities] = useState([]);
+  const [types, setTypes] = useState([])
+  const [selectedCities, setSelectedCities] = useState([])
+  const [selectedTypes, setSelectedTypes] = useState([])
 
-    return (
-        <div>
-            <div className="d-flex flex-column p-5 my-filter-left">
-                <div className="d-flex flex-column bg-white p-5 my-filter-text">
-                    <div className="d-flex flex-column">
-                        <p><strong>Kategori Seçiniz</strong></p>
-                        <UncontrolledDropdown>
-                            <DropdownToggle caret className="my-filter-dropdown" variant="success" id="dropdown-basic">
-                                Tarihi Mekan
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem href="#/action-1">Action</DropdownItem>
-                                <DropdownItem href="#/action-2">Another action</DropdownItem>
-                                <DropdownItem href="#/action-3">Something else</DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
-                    </div>
+  const handleSelectedCity = (id) => {
+    const index = selectedCities.indexOf(id)
+    if (index > -1)
+    {
+      selectedCities.splice(index, 1)
+      setSelectedCities(selectedCities)
+    }
+    else {
+      setSelectedCities([...selectedCities, id])
+    }
+  }
 
-                    <div className="d-flex flex-column">
-                        <p><strong>Şehir Seçiniz</strong></p>
-                        <UncontrolledDropdown>
-                            <DropdownToggle caret className="my-filter-dropdown" variant="success" id="dropdown-basic">
-                                İstanbul
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem href="#/action-1">Action</DropdownItem>
-                                <DropdownItem href="#/action-2">Another action</DropdownItem>
-                                <DropdownItem href="#/action-3">Something else</DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
-                    </div>
+  const handleSelectedType = (id) => {
+    const index = selectedTypes.indexOf(id)
+    if (index > -1)
+    {
+      selectedTypes.splice(index, 1)
+      setSelectedTypes(selectedTypes)
+    }
+    else {
+      setSelectedTypes([...selectedTypes, id])
+    }
+  }
 
-                    <div className="d-flex flex-column">
-                        <p><strong>Ücretli/Ücretsiz</strong></p>
-                        <UncontrolledDropdown>
-                            <DropdownToggle caret className="my-filter-dropdown" variant="success" id="dropdown-basic">
-                                Özel Araç
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem href="#/action-1">Action</DropdownItem>
-                                <DropdownItem href="#/action-2">Another action</DropdownItem>
-                                <DropdownItem href="#/action-3">Something else</DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
-                    </div>
+  const handleFilterClick = () => {
+    console.log(selectedCities, selectedTypes)
+    navigate(`?city=${selectedCities.join(",")}&types=${selectedTypes.join(",")}`)
+  }
 
-                    <div className="my-filter-dropdown">
-                        <form>
-                            <input type='checkbox' id='konum' name='konum' value='konum' />
-                            <label htmlFor="konum">Konumum Kullanmasına İzin Veriyorum.</label>
-                        </form>
-                    </div>
+  useEffect(() => {
+    const cityService = new CityService();
+    const typesService = new LocationTypeService()
+    cityService.getCities().then((res) => {
+      setCities(res.data.data);
+    });
+    typesService.getTypes().then((res) => {
+      setTypes(res.data.data)
+    })
+  }, []);
 
-                    <div>
-                        <form>
-                            <label for="location"></label>
-                            <input className="my-filter-dropdown mb-5" type="text" placeholder="Başlangıç Noktası" id="location" name="location" />
-                        </form>
-                    </div>
-                    <Button className="bg-dark text-light m-4">Filtrele</Button>
+  return (
+    <div>
+      <div className="d-flex flex-column p-5 my-filter-left">
+        <article className="filter-group">
+          <header className="card-header">
+            <h3>Şehirler</h3>
+          </header>
+          <div id="brandCollapse">
+            <div className="card-body overflow-auto filterMaxHeight">
+              {cities.map((city) => (
+                <div className="form-check my-2" key={city._id}>
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value=""
+                    onChange={() => handleSelectedCity(city._id)}
+                  />
+                  <label
+                    className="form-check-label"
+                    for="{{'brandCheck' + brand.id}}"
+                  >
+                    {city.cityName}
+                  </label>
                 </div>
-
-
-                <div className="my-filter-left-bottom">
-                    <h3 className="p-5">Yöresel Tatlarını Denediniz mi?</h3>
-                    <div className="d-flex flex-column align-items-center">
-                        <img onClick={() => { navigate("/location") }} className="m-3 cursor-pointer hover-overlay" src={require("../../assets/imgs/yemek1.png")} />
-                        <strong>Kıygaşa  Böreği</strong>
-                    </div>
-                    <div className="d-flex flex-column align-items-center">
-                        <img onClick={() => { navigate("/location") }} className="m-3 cursor-pointer hover-overlay" src={require("../../assets/imgs/yemek2.png")} alt="" />
-                        <strong>Balaban </strong>
-                    </div>
-                    <div className="d-flex flex-column align-items-center">
-                        <img onClick={() => { navigate("/location") }} className="m-3 cursor-pointer hover-overlay" src={require("../../assets/imgs/yemek3.png")} alt="" />
-                        <strong>Çipbörek</strong>
-                    </div>
-                    <div className="d-flex flex-column align-items-center">
-                        <img onClick={() => { navigate("/location") }} className="m-3 cursor-pointer hover-overlay" src={require("../../assets/imgs/yemek4.png")} alt="" />
-                        <strong>Yufkalı Büryan</strong>
-                    </div>
-                </div>
+              ))}
             </div>
+          </div>
+        </article>
+        <article className="filter-group">
+        <header className="card-header">
+            <h3>Türler</h3>
+          </header>
+          <div id="brandCollapse">
+            <div className="card-body overflow-auto filterMaxHeight">
+              {types.map((type) => (
+                <div className="form-check my-2" key={type._id}>
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value=""
+                    onChange={() => handleSelectedType(type._id)}
+                  />
+                  <label
+                    className="form-check-label"
+                    for="{{'brandCheck' + brand.id}}"
+                  >
+                    {type.name}
+                  </label>
+                </div>
+              ))}
+            </div>
+          </div>
+        </article>
+        <Button onClick={handleFilterClick}>
+          Filtrele
+        </Button>
+        <div className="my-filter-left-bottom">
+          <h3 className="p-5">Yöresel Tatlarını Denediniz mi?</h3>
+          <div className="d-flex flex-column align-items-center">
+            <img
+              onClick={() => {
+                navigate("/location");
+              }}
+              className="m-3 cursor-pointer hover-overlay"
+              src={require("../../assets/imgs/yemek1.png")}
+            />
+            <strong>Kıygaşa Böreği</strong>
+          </div>
+          <div className="d-flex flex-column align-items-center">
+            <img
+              onClick={() => {
+                navigate("/location");
+              }}
+              className="m-3 cursor-pointer hover-overlay"
+              src={require("../../assets/imgs/yemek2.png")}
+              alt=""
+            />
+            <strong>Balaban </strong>
+          </div>
+          <div className="d-flex flex-column align-items-center">
+            <img
+              onClick={() => {
+                navigate("/location");
+              }}
+              className="m-3 cursor-pointer hover-overlay"
+              src={require("../../assets/imgs/yemek3.png")}
+              alt=""
+            />
+            <strong>Çipbörek</strong>
+          </div>
+          <div className="d-flex flex-column align-items-center">
+            <img
+              onClick={() => {
+                navigate("/location");
+              }}
+              className="m-3 cursor-pointer hover-overlay"
+              src={require("../../assets/imgs/yemek4.png")}
+              alt=""
+            />
+            <strong>Yufkalı Büryan</strong>
+          </div>
         </div>
-    )
-}
+        {/* </Formik> */}
+        {/* </Col>
+        </Row> */}
+      </div>
+    </div>
+  );
+};
 
-export default FilterLeftSide
+export default FilterLeftSide;

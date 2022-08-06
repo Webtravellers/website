@@ -7,6 +7,7 @@ import { useNavigate } from "react-router";
 import ForgottenFlavors from "../components/home-page/ForgottenFlavors.jsx";
 import { Button } from "reactstrap";
 import TopMuseums from "../components/home-page/TopMuseums";
+import UserService from "../services/users";
 
 import { useTranslation, Trans } from "react-i18next";
 
@@ -17,13 +18,24 @@ const HomePage = () => {
   const [locations, setLocations] = useState([]);
   const popular = [];
   const muzeler = [];
+  const [users, setUsers] = useState("")
+
   useEffect(() => {
     const locationService = new LocationService();
+    const userService = new UserService();
+
     locationService.getLocations().then((res) => {
       setLocations(res.data.data);
+      console.log(res.data.data)
     });
+
+    userService.getUsers().then((res) => {
+      setUsers(res.data.data)
+    })
+
   }, []);
 
+  
   const divideLocations = () => {
     for (let i = 0; i <= locations.length; i++) {
       popular.push(locations[i]);
@@ -33,7 +45,7 @@ const HomePage = () => {
     }
   };
   divideLocations();
-
+  console.log(users)
   return (
     <div className="d-flex flex-column align-items-center mt-5">
       <div className="d-flex justify-content-center">

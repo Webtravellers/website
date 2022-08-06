@@ -44,7 +44,7 @@ const UsersListPage = () => {
                                         <DropdownMenu
                                             aria-labelledby="navbar-default_dropdown_1"
                                             className="dropdown-menu-arrow"
-                                            right
+                                            end
                                         >
                                             <DropdownItem >Change Status</DropdownItem>
                                         </DropdownMenu>

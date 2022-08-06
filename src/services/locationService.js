@@ -1,8 +1,8 @@
 import api from './api'
 const api_url = "locations/"
 class LocationService {
-    getLocations() {
-        return api().get(api_url)
+    getLocations(page = 1, size = 20) {
+        return api().get(api_url + `?page=${page}&size=${size}`)
     }
 
     addLocation(data) {
