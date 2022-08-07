@@ -11,6 +11,7 @@ import { Button, Tooltip } from "reactstrap";
 import UserService from "../services/userServices";
 import { useSelector } from "react-redux";
 import BasicRating from "../components/locationRating/BasicRating";
+import NewLocationCommentModal from "../components/comments/NewLocationCommentModal";
 
 const LocationPage = () => {
   const { t, i18n } = useTranslation();
@@ -18,6 +19,7 @@ const LocationPage = () => {
   const [location, setLocation] = useState({});
   const [cities, setCities] = useState([]);
   const [comments, setComments] = useState(null);
+  const [newComment, setNewComment] = useState(false)
   const userService = new UserService();
   const { user } = useSelector((state) => state.auth);
   useEffect(() => {
@@ -48,6 +50,7 @@ const LocationPage = () => {
     userService.addToFavoriteList(user._id, id);
   };
   console.log(user);
+  
   return (
     <div className="d-flex flex-column align-items-center mt-5">
       <div className="w-75 mh-25 m-5">
@@ -72,6 +75,13 @@ const LocationPage = () => {
       </div>
       <div className="w-75 m-5">
         <h3>{t("location-page.comments")}</h3>
+        <Button onClick={() => setNewComment(true)}>
+          <i className="fa fa-comment"></i>
+        </Button>
+        <NewLocationCommentModal
+          newComment={newComment}
+          setNewComment={setNewComment}
+        ></NewLocationCommentModal>
         {comments?.map((comment) => (
           <LocationComment
             firstname={comment.user.name}
