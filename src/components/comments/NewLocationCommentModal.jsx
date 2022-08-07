@@ -6,6 +6,7 @@ import { Modal, ModalBody, ModalHeader, Progress } from "reactstrap";
 import LocationService from "../../services/locationService";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
+import LocationPage from "../../pages/LocationPage";
 
 const NewLocationCommentModal = ({ newComment, setNewComment }) => {
   const [loading, setLoading] = useState(false);
@@ -14,7 +15,6 @@ const NewLocationCommentModal = ({ newComment, setNewComment }) => {
   const { id } = useParams();
   const locationService = new LocationService();
   const { user } = useSelector((state) => state.auth);
-    console.log(id)
   const newCommentHandler = () => {
     setLoading(true);
     const data = {
@@ -36,7 +36,6 @@ const NewLocationCommentModal = ({ newComment, setNewComment }) => {
         setLoading(false);
       });
   };
-  console.log(score)
   return (
     <Modal
       isOpen={newComment}
@@ -60,7 +59,7 @@ const NewLocationCommentModal = ({ newComment, setNewComment }) => {
                 value={comment}
                 onChange={(val) => setComment(val.target.value)}
               ></textarea>
-              <Typography component="legend">Controlled</Typography>
+              <Typography component="legend">Puan Ver</Typography>
               <Rating
                 name="simple-controlled"
                 size="large"

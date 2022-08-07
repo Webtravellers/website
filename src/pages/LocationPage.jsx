@@ -22,8 +22,15 @@ const LocationPage = () => {
   const [newComment, setNewComment] = useState(false)
   const userService = new UserService();
   const { user } = useSelector((state) => state.auth);
+  const [users, setUsers] = useState([])
+  let uniqueComments = new Set()
+
   useEffect(() => {
     const locationService = new LocationService();
+
+    userService.getUsers().then((res) => {
+      setUsers(res.data.data)
+    })
 
     locationService.getById(id).then((res) => {
       setLocation(res.data.data);
@@ -49,7 +56,10 @@ const LocationPage = () => {
   const handleFavoiteList = () => {
     userService.addToFavoriteList(user._id, id);
   };
-  console.log(user);
+  
+  comments.forEach((comment) => {
+    if (comment.user ==)
+  })
   
   return (
     <div className="d-flex flex-column align-items-center mt-5">
@@ -62,12 +72,12 @@ const LocationPage = () => {
               {currentCity ? currentCity.cityName : null}
             </p>
             <div className="d-flex">
-              <BasicRating />
+              <BasicRating currentRating={0}/>
             </div>
           </div>
           <div className="d-flex flex-column m-1">
             <Button disabled={!user} onClick={() => handleFavoiteList()}>
-              <BookmarkAddIcon />
+              <BookmarkAddIcon/>
             </Button>
           </div>
         </div>
@@ -84,6 +94,7 @@ const LocationPage = () => {
         ></NewLocationCommentModal>
         {comments?.map((comment) => (
           <LocationComment
+            key = {comment._id}
             firstname={comment.user.name}
             lastname={comment.user.lastname}
             comment={comment.comment}
