@@ -23,7 +23,7 @@ const IndividualPostPage = () => {
         var numberOfLikes = post.likes.length
     }
 
-    console.log(numberOfLikes);
+    console.log(post);
     return (
         <div className="w-100 d-flex flex-column align-items-center ">
             <div className="w-75 ">
@@ -41,14 +41,14 @@ const IndividualPostPage = () => {
             <div className="w-75 p-3">
                 <h3>{t("individual-post-page.comments")}</h3>
                 {
-                    !post.comments ? post?.comments?.map((comment) => {
+                    !post.commnets ? post?.comments?.map(comment => (
                         <PostComment
-                            firstname={comment.user}
-                            lastname={comment.user}
+                            key={comment._id}
+                            id={comment.user}
                             time={comment.date}
                             comment={comment.comment}
                         />
-                    }) : <p> There is no comment for this post yet!</p>
+                    )) : <p>There is no comment for this post yet!</p>
 
                 }
             </div>

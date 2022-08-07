@@ -15,7 +15,7 @@ class PostService {
         return api().get(`${api_url}/${postID}`)
     }
     handleLikeEvent(postId, userId) {
-        return api().post(`${api_url}/${postId}/${userId}`)
+        return api().post(`${api_url}/${postId}/likes/${userId}`)
     }
     newCommentAtPost(postId, data) {
         return api().post(`${api_url}/${postId}/comments`, data)

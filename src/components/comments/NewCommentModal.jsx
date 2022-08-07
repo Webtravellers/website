@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { toast } from 'react-toastify';
 import { Modal, ModalBody, ModalHeader, Progress } from 'reactstrap';
@@ -8,15 +9,27 @@ import PostService from '../../services/postService';
 const NewCommentModal = ({ newComment, setNewComment }) => {
     const [loading, setLoading] = useState(false)
     const [comment, setComment] = useState("")
-    const { posId } = useParams()
+    const { postid } = useParams()
     const postService = new PostService()
-
+    const { user } = useSelector((state) => state.auth);
     const newCommentHandler = () => {
-        const data = {}
-        postService.newCommentAtPost(posId, data)
-
+        setLoading(true)
+        const data = {
+            comment: comment,
+            user: user._id
+        }
+        postService.newCommentAtPost(postid, data).then(res => {
+            toast.success(res.data.message);
+        })
+            .catch(err => {
+                toast.error(err.response.data.message);
+            })
+            .finally(() => {
+                setComment("");
+                setNewComment(false)
+                setLoading(false)
+            })
     }
-    console.log(comment);
     return (
         <Modal isOpen={newComment} onClosed={() => setNewComment(false)} maxWidth='xl'>
             <div className="d-flex flex-column ">
@@ -40,7 +53,7 @@ const NewCommentModal = ({ newComment, setNewComment }) => {
                             </textarea>
 
                             <div className="d-flex align-items-center justify-content-between">
-                                <button onClick={""} disabled={loading} className="bg-success text-white px-6  rounded  hover:drop-shadow-lg ">
+                                <button onClick={() => newCommentHandler()} disabled={loading} className="bg-success text-white px-6  rounded  hover:drop-shadow-lg ">
                                     {loading ? "Paylaşılıyor..." : "Paylaş"}
                                 </button>
                                 <button onClick={() => setNewComment(false)} disabled={loading} className="bg-danger text-white px-6  rounded  hover:drop-shadow-lg ">İptal</button>

@@ -1,27 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import UserService from "../../services/userServices";
 
 
-const LocationComment = (props) => {
-    const fname = props.firstname
-    const lname = props.lastname
-    const fullname = fname + " " + lname
+const PostComment = (props) => {
+    const id = props.id
+    const fullname = ""
     const comment = props.comment
-    const time = props.time
+    const time = props.time ? new Date(props.time).toLocaleString() : null
+    const [user, setUser] = useState({})
+    const userService = new UserService()
+    useEffect(() => {
+        userService.getUserById(id).then(res => {
+            setUser(res.data.data)
+        })
+    }, [])
+    console.log(user);
     return (
         <div className="d-flex  position-relative">
             <div className="d-flex align-items-center">
-                <img className="" alt="" src={require("../../assets/imgs/user1.png")}></img>
+                <img className="imgInComment" alt="" src={user.photo}></img>
                 <div className="d-flex flex-column mt-4 ml-2">
-                    <p className="Location-comment">{fullname}</p>
+                    <p className="Location-comment">{user.name + user.lastname}</p>
                     <p className="Location-comment">{comment}</p>
                 </div>
             </div>
             <div className="justify-self-end mt-4 position-absolute right-0 mx-2">
-                <p className="Location-comment">{time} ago</p>
+                <p className="Location-comment">{time} </p>
             </div>
 
         </div>
     )
 }
 
-export default LocationComment 
+export default PostComment 

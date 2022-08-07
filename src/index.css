@@ -466,3 +466,9 @@ code {
 .locationInTable :hover {
   opacity: 50%;
 }
+
+.imgInComment {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
