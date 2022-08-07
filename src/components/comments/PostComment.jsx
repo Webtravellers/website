@@ -4,7 +4,6 @@ import UserService from "../../services/userServices";
 
 const PostComment = (props) => {
     const id = props.id
-    const fullname = ""
     const comment = props.comment
     const time = props.time ? new Date(props.time).toLocaleString() : null
     const [user, setUser] = useState({})
@@ -19,7 +18,7 @@ const PostComment = (props) => {
             <div className="d-flex align-items-center">
                 <img className="imgInComment" alt="" src={user.photo}></img>
                 <div className="d-flex flex-column mt-4 ml-2">
-                    <p className="Location-comment">{user.name + user.lastname}</p>
+                    <p className="Location-comment">{user.name + " " + user.lastname}</p>
                     <p className="Location-comment">{comment}</p>
                 </div>
             </div>
