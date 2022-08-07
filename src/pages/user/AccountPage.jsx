@@ -61,7 +61,7 @@ const AccountPage = () => {
               <div className="d-flex pb-5" key={post._id}>
                 <img
                   onClick={() => {
-                    navigate("/");
+                    navigate(`posts/${post._id}`);
                   }}
                   className="p-1  cursor-pointer posts-in-profile"
                   src={post.photo}
