@@ -14,7 +14,6 @@ const PostComment = (props) => {
             setUser(res.data.data)
         })
     }, [])
-    console.log(user);
     return (
         <div className="d-flex  position-relative">
             <div className="d-flex align-items-center">

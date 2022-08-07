@@ -22,12 +22,12 @@ const IndividualPostPage = () => {
     if (post?.likes) {
         var numberOfLikes = post.likes.length
     }
-
-    console.log(post);
+    console.log(post.comments);
     return (
         <div className="w-100 d-flex flex-column align-items-center ">
             <div className="w-75 ">
                 <IndividualPost
+                    key={postid}
                     postPhoto={post.photo}
                     userPhoto=""
                     likes={numberOfLikes}
@@ -41,7 +41,7 @@ const IndividualPostPage = () => {
             <div className="w-75 p-3">
                 <h3>{t("individual-post-page.comments")}</h3>
                 {
-                    !post.commnets ? post?.comments?.map(comment => (
+                    post?.comments?.length != 0 ? post?.comments?.map(comment => (
                         <PostComment
                             key={comment._id}
                             id={comment.user}
