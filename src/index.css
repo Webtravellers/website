@@ -58,9 +58,6 @@ code {
 
 }
 
-.topnavbar .nav-link:hover {
-  color: rgb(119, 119, 119)
-}
 
 .topnavbar .nav-link {
   color: white;
@@ -73,10 +70,15 @@ code {
   letter-spacing: -0.02em;
 }
 
-
-.topnavbar .nav-link:hover {
-  color: rgb(119, 119, 119)
+.nav-link:hover {
+  background-color: #011C37 !important;
+  color: #FF7426 !important;
 }
+
+a.nav-link.active {
+  color: #FF7426 !important;
+}
+
 
 .logoname {
   text-align: center;
@@ -101,9 +103,6 @@ code {
   color: rgb(197, 197, 197)
 }
 
-.topnavbar .nav-link:hover {
-  color: rgb(119, 119, 119)
-}
 
 .sidebar .nav-item {
   padding: 10px 0px;

@@ -10,7 +10,7 @@ import {
   DropdownItem,
 } from "reactstrap";
 import logo from "../../assets/scss/imgs/turkey-logo.png";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useAuth from "../../hooks/useAuth";
 import { useTranslation } from "react-i18next";
@@ -38,19 +38,19 @@ const TopNavbar = () => {
               </div>
               <Nav className="navbar-nav-hover align-items-lg-center  text-light">
                 <NavItem>
-                  <Link to="/" className="nav-link">
+                  <NavLink to="/" className="nav-link">
                     {t("top-navbar.homepage")}
-                  </Link>
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <Link to="/discover" className="nav-link text-warning">
+                  <NavLink to="/discover" className="nav-link">
                     {t("top-navbar.discover")}
-                  </Link>
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <Link to="/memories" className="nav-link">
+                  <NavLink to="/memories" className="nav-link">
                     {t("top-navbar.memories")}
-                  </Link>
+                  </NavLink>
                 </NavItem>
               </Nav>
             </div>
@@ -59,18 +59,18 @@ const TopNavbar = () => {
                 {!token ? (
                   <>
                     <NavItem>
-                      <Link
+                      <NavLink
                         to="/users/signup"
-                        className="nav-link text-warning"
+                        className="nav-link "
                       >
                         {t("top-navbar.sign-up")}
-                      </Link>
+                      </NavLink>
                     </NavItem>
                     <div>{t("top-navbar.or")}</div>
                     <NavItem>
-                      <Link to="/users/signin" className="nav-link">
+                      <NavLink to="/users/signin" className="nav-link">
                         {t("top-navbar.sign-in")}
-                      </Link>
+                      </NavLink>
                     </NavItem>
                   </>
                 ) : (
