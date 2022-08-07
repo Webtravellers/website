@@ -30,7 +30,6 @@ const IndividualPostPage = () => {
                 <IndividualPost
                     key={postid}
                     postPhoto={post.photo}
-                    userPhoto=""
                     likes={numberOfLikes}
                     comments={post?.comments}
                     postDate={post?.createdAt?.slice(0, 10)}

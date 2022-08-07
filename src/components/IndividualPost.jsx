@@ -6,19 +6,18 @@ import NewCommentModal from "./comments/NewCommentModal";
 
 const IndividualPost = (props) => {
     const postPhoto = props.postPhoto
-    const userPhoto = "../assets/imgs/user-photo.png"
-    const postDate = props.postDate
+    const postDate = props.postDate ? new Date(props.postDate).toLocaleString() : null
     const postText = props.postText
     const likes = props.likes
     const comments = props.comments
     const postId = props.postId
     const setLoading = props.anchor
     const postService = new PostService()
-    const { user: { _id: userId } } = useSelector((state) => state.auth);
+    const { user } = useSelector((state) => state.auth);
     const [newComment, setNewComment] = useState(false)
 
     const handleLikeEvent = () => {
-        postService.handleLikeEvent(postId, userId).then(() => {
+        postService.handleLikeEvent(postId, user._id).then(() => {
             setLoading(p => !p)
         })
     }
@@ -46,7 +45,7 @@ const IndividualPost = (props) => {
                 <p className="my-justify-self-end pr-3">{postDate}</p>
             </div>
             <div className="d-flex justify-content-start">
-                <img src={require("../assets/imgs/user-photo.png")} alt="" />
+                <img className="usrImgInPost" src={user.photo} alt="" />
                 <p className="p-3">{postText}</p>
             </div>
         </div>
