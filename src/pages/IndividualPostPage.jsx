@@ -23,7 +23,6 @@ const IndividualPostPage = () => {
         var numberOfLikes = post.likes.length
     }
 
-    console.log(post);
     return (
         <div className="w-100 d-flex flex-column align-items-center ">
             <div className="w-75 ">
