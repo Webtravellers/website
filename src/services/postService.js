@@ -20,6 +20,10 @@ class PostService {
     newCommentAtPost(postId, data) {
         return api().post(`${api_url}/${postId}/comments`, data)
     }
+
+    getAllPosts(skip) {
+        return api().get(`${api_url}?skip=${skip}`)
+    }
 }
 
 export default PostService 

@@ -18,6 +18,7 @@ import TripPage from '../pages/TripPage'
 import MapView from '../components/map/MapView'
 import MapRouteView from '../components/map/MapRouteView'
 import TripMapView from '../components/trip-page/TripMapView'
+import Memories from '../pages/Memories'
 const AdminRouter = React.lazy(() => import("./AdminRouter"))
 
 const Router = () => {
@@ -29,6 +30,7 @@ const Router = () => {
                 <Route exact path='discover' element={<DiscoverPage />} />
                 <Route exact path='bi/:userid/posts/:postid' element={<IndividualPostPage />} />
                 <Route exact path='filtering' element={<FilteringPage />} />
+                <Route exact path='memories' element={<Memories />} />
                 <Route path='users' element={<AuthLayout />}>
                     <Route path='signup' element={<SignupPage />} />
                     <Route path='signin' element={<SigninPage />} />
