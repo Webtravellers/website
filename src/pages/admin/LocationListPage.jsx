@@ -15,7 +15,7 @@ const LocationListPage = () => {
         const locationService = new LocationService()
         const cityService = new CityService()
 
-        locationService.getLocations().then(res => {
+        locationService.getLocations({}).then(res => {
             setLocations(res.data.data)
             console.log(res.data.data);
         })

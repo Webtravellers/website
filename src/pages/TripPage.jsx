@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router";
-import { Button } from "reactstrap";
+import { useNavigate, useParams } from "react-router";
+import { Button, Table } from "reactstrap";
 import LocationService from "../services/locationService";
 import TripService from "../services/tripService";
 import { BiMap } from "../utils/map";
 import { useTranslation } from "react-i18next";
+import LocationContainer from "../components/trip-page/LocationContainer";
 
 const TripPage = () => {
   const { t, i18n } = useTranslation();
@@ -18,36 +19,22 @@ const TripPage = () => {
   const tripService = new TripService();
   const locationService = new LocationService();
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (!loading) return;
     tripService.getTripByTripId(userId, tripId).then((res) => {
       setLoading(false);
       setTrip(res.data.data);
-      console.log(res.data.data);
     });
-    locationService.getLocations().then((res) => {
+    locationService.getLocations({}).then((res) => {
       setLocations(res.data.data);
-      console.log(res.data.data);
     });
   }, [loading]);
-
-  useEffect(() => {
-    if (trip.locations) {
-      let map = new BiMap();
-      map.init(document.getElementById("routerMap"));
-      if (trip.locations.length > 1)
-        map.calculateAndDisplayRoute(
-          trip.locations.map((l) => l.location.coordinates),
-          BiMap.MODE.DRIVING
-        );
-    }
-  }, [trip]);
 
   const handleAddLocation = (location) => {
     setLoading(true);
     tripService.addLocationToTrip(userId, tripId, { location });
-    console.log(userId, tripId, { location });
   };
 
   const handleRemoveLocation = (locationId) => {
@@ -59,30 +46,58 @@ const TripPage = () => {
     <>
       <div className="d-flex flex-column justify-content-center align-items-center">
         <h3>{trip?.name}</h3>
-        <div>
-          <h4>{t("trip-page.h4-part1")}</h4>
-          {trip?.locations?.map((location) => (
-            <p>{location.name}</p>
-          ))}
+        <div className="d-flex flex-column m-5">
+          <h4 className="m-2">{t("trip-page.h4-part1")}</h4>
+          <div className="d-flex justify-content-center">
+            <div className="locationContainerInTrip"
+            >
+              {trip?.locations?.map((location) => {
+                return (
+                  <LocationContainer
+                    id={location._id}
+                    name={location.name}
+                    photo={location.photos[0]}
+                    desc={location.desc}
+                  />
+                )
+              })}
+            </div>
+          </div>
         </div>
+        <Button className="m-3" onClick={() => navigate(`mapView`)}>See your trip in map</Button>
+        <div className="m-5">
+          <h4 className="m-2">{t("trip-page.h4-part2")}</h4>
+          <div>
+            <Table>
+              <thead>
+                <tr>
+                  <th>Location</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                  <th>Add Your Trip</th>
+                </tr>
+              </thead>
+              <tbody>
+                {locations.map(location => (
+                  <tr>
+                    <td className="locationInTable" onClick={() => navigate(`/location/${location._id}`)}>
+                      <img className="imgInTable" src={location.photos[0]}></img><span className="m-4">{location.name}</span></td>
+                    <td>{location.type.map(t => t.name).toString()}</td>
+                    <td>{location.desc?.slice(0, 47)}...</td>
+                    <td>
+                      {
+                        trip?.locations?.some(x => x._id === location?._id) ? <Button onClick={() => handleRemoveLocation(location._id)} className="bg-danger ml-4"> - </Button>
+                          : <Button onClick={() => handleAddLocation(location._id)} className="bg-success ml-4"> + </Button>
+                      }
 
-        <div>
-            <h4>{t("trip-page.h4-part2")}</h4>
+                    </td>
+                  </tr>
+                ))}
 
-          {
-                        locations?.map((location) => (
-                            <div className="d-flex m-2 p-2 justify-content-center align-items-center">
-                                <p>{location?.name}</p>
-                                {
-                                    trip?.locations?.some(x => x._id === location?._id) ? <Button onClick={() => handleRemoveLocation(location._id)} className="bg-danger"> - </Button>
-                                        : <Button onClick={() => handleAddLocation(location._id)} className="bg-success"> + </Button>
-                                }
-
-                            </div>
-                        ))
-                    }
+              </tbody>
+            </Table>
+          </div>
         </div>
-        <div id="routerMap"></div>
       </div>
     </>
 

@@ -17,6 +17,7 @@ import TripsPage from '../pages/TripsPage'
 import TripPage from '../pages/TripPage'
 import MapView from '../components/map/MapView'
 import MapRouteView from '../components/map/MapRouteView'
+import TripMapView from '../components/trip-page/TripMapView'
 const AdminRouter = React.lazy(() => import("./AdminRouter"))
 
 const Router = () => {
@@ -38,6 +39,8 @@ const Router = () => {
                     <Route exact path='bi/:id/update' element={<UpdateUserInfo />} />
                     <Route exact path='bi/:id/trips' element={<TripsPage />} />
                     <Route exact path='bi/:id/trips/:tripId' element={<TripPage />} />
+                    <Route exact path='bi/:id/trips/:tripId/mapView' element={<TripMapView />} />
+
                 </Route>
             </Route>
             <Route path='dashboard/*' element={

@@ -17,18 +17,19 @@ const TripsPage = () => {
     const tripService = new TripService();
     tripService.getTripsByUserId(String(userId)).then((res) => {
       setTrips(res.data.data);
-      //console.log(res.data.data);
       console.log(trips);
     });
   }, [trips]);
   return (
-    <div className="d-flex flex-column w-50 justify-content-center align-items-center">
+    <div className="d-flex flex-column w-100 justify-content-center align-items-center">
       <h3>{t("trips-page.h3")}</h3>
       {trips.map((trip) => (
         <TripContainer
           key={trip._id}
           tripName={trip.name}
           tripId={trip._id}
+          date={trip.createdAt}
+          locations={trip?.locations}
         ></TripContainer>
       ))}
       <Button onClick={() => setNewTrip(!newTrip)}>

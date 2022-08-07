@@ -432,10 +432,37 @@ code {
 }
 
 #routerMap {
-  height: 500px;
-  width: 500px;
+  height: 900px;
+  width: 100%;
 }
 
 #MapView {
   position: unset !important;
+}
+
+.locationContainerInTrip {
+  display: flex;
+  flex-wrap: wrap;
+  width: 73rem;
+}
+
+.locationContainerInTrip>* {
+  flex: 0 0 32%;
+}
+
+.cardTextInTripContainer {
+  max-width: 50rem;
+}
+
+.imgInTable {
+  width: 50px;
+  height: 40px;
+}
+
+.locationInTable {
+  cursor: pointer;
+}
+
+.locationInTable :hover {
+  opacity: 50%;
 }
