@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form, FormGroup, Label, Input, Button, Row, Col } from "reactstrap";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import UserService from "../../services/users";
+import UserService from "../../services/userServices";
 import UpdateInfoService from "../../services/updateInfoService";
 import MainScreen from "../../components/updateUserScreen/MainScreen";
 import { useTranslation } from "react-i18next";
@@ -52,7 +52,7 @@ const UpdateUserInfo = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     setLoading(true);
-    
+
     const formData = new FormData();
 
     formData.set("name", name);

@@ -6,6 +6,10 @@ import LocationComment from "../components/comments/LocationComment.";
 import CityService from "../services/cityService";
 import LocationService from "../services/locationService";
 import { useTranslation } from "react-i18next";
+import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
+import { Button, Tooltip } from "reactstrap";
+import UserService from "../services/userServices";
+import { useSelector } from "react-redux";
 
 const LocationPage = () => {
     const { t, i18n } = useTranslation();
@@ -13,8 +17,8 @@ const LocationPage = () => {
     const [location, setLocation] = useState({})
     const [cities, setCities] = useState([])
     const [comments, setComments] = useState(null)
-
-
+    const userService = new UserService()
+    const { user } = useSelector((state) => state.auth);
     useEffect(() => {
         const locationService = new LocationService()
 
@@ -40,6 +44,10 @@ const LocationPage = () => {
     })
 
 
+    const handleFavoiteList = () => {
+        userService.addToFavoriteList(user._id, id)
+    }
+    console.log(user)
     return (
         <div className="d-flex flex-column align-items-center mt-5">
             <div className="w-75 mh-25 m-5" >
@@ -55,13 +63,10 @@ const LocationPage = () => {
                         </div>
                     </div>
                     <div className="d-flex flex-column m-1">
-                        <h4 className="m-4 ">{t("location-page.facilities")}</h4>
-                        <div className="d-flex flex-row">
-                            <i className="fa fa-car display-4 px-4"></i>
-                            <i class="fa fa-cutlery display-4 px-4" aria-hidden="true"></i>
-                            <i class="fa fa-bus display-4 px-4" aria-hidden="true"></i>
-                            <i class="fa fa-tree display-4 px-4" aria-hidden="true"></i>
-                        </div>
+                        <Button disabled={!user} onClick={() => handleFavoiteList()}>
+                            <BookmarkAddIcon />
+                        </Button>
+
                     </div>
                 </div>
                 <div>
@@ -80,7 +85,7 @@ const LocationPage = () => {
                             photo={comment.user.photo}
                             score={comment.score}
                         />
-                    )) 
+                    ))
                 }
             </div>
 

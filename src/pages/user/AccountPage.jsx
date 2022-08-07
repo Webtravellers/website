@@ -4,7 +4,7 @@ import UserPageHeader from "../../components/user-page/UserPageHeader";
 import { useNavigate } from "react-router";
 import NewPost from "../../components/user-page/NewPost";
 import { useSelector } from "react-redux";
-import UserService from "../../services/users";
+import UserService from "../../services/userServices";
 import PostService from "../../services/postService";
 import { useTranslation } from "react-i18next";
 

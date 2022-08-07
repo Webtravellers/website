@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Nav,
@@ -14,7 +14,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useAuth from "../../hooks/useAuth";
 import { useTranslation } from "react-i18next";
-import UserService from "../../services/users";
 
 const lngs = {
   tr: { nativeName: "Türkçe" },
@@ -26,7 +25,7 @@ const TopNavbar = () => {
   const { user, token } = useSelector((state) => state.auth);
   const { handleLogout } = useAuth();
   const navigate = useNavigate();
-  
+
   return (
     <div className="topnavbar">
       <Navbar>

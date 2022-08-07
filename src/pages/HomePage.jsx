@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 import ForgottenFlavors from "../components/home-page/ForgottenFlavors.jsx";
 import { Button } from "reactstrap";
 import TopMuseums from "../components/home-page/TopMuseums";
-import UserService from "../services/users";
+import UserService from "../services/userServices";
 
 import { useTranslation, Trans } from "react-i18next";
 

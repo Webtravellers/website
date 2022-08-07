@@ -10,6 +10,10 @@ class UserService {
         return api().get(url + String(userId))
     }
 
+    addToFavoriteList(id, locaitonId) {
+        return api().post(`${url}/${id}/favorites/${locaitonId}`)
+    }
+
 }
 
 export default UserService

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Table } from 'reactstrap'
-import UserService from '../../services/users'
+import UserService from '../../services/userServices'
 
 const UsersListPage = () => {
 
