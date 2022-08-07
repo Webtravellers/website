@@ -24,7 +24,7 @@ const HomePage = () => {
     const locationService = new LocationService();
     const userService = new UserService();
 
-    locationService.getLocations().then((res) => {
+    locationService.getLocations({}).then((res) => {
       setLocations(res.data.data);
       console.log(res.data.data)
     });
@@ -35,7 +35,7 @@ const HomePage = () => {
 
   }, []);
 
-  
+
   const divideLocations = () => {
     for (let i = 0; i <= locations.length; i++) {
       popular.push(locations[i]);
@@ -104,7 +104,7 @@ const HomePage = () => {
             {t("home-page.top-museums-h1-part")}
           </h1>
           <div className="top-part-home-page">
-          {t("home-page.top-museums-desc-part")}
+            {t("home-page.top-museums-desc-part")}
           </div>
           <Button className="category-item-button bg-dark text-light justify-self-end m-3">
             {t("home-page.top-museums-button-part")}

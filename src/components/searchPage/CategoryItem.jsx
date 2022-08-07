@@ -40,7 +40,7 @@ const CategoryItem = (props) => {
                     <p className="discover-page-item-text">{locs[5]?.name}</p>
                 </div>
             </div>
-            <Button className="category-item-button w-25 bg-dark text-light justify-self-end m-3">{t("category-item.button-part")}</Button>
+            <Button onClick={() => navigate("filtering")} className="category-item-button w-25 bg-dark text-light justify-self-end m-3">{t("category-item.button-part")}</Button>
         </div>
     )
 }

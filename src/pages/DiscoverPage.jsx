@@ -15,7 +15,7 @@ const DiscoverPage = () => {
     const muzeler = []
     useEffect(() => {
         const locationService = new LocationService()
-        locationService.getLocations().then(res => {
+        locationService.getLocations({}).then(res => {
             setLocations(res.data.data)
         })
     }, [])
@@ -44,7 +44,7 @@ const DiscoverPage = () => {
 
         <div className="d-flex flex-column align-items-center">
             <h2 className="m-5 p-5"> <span className="myBold">{t("discover-page.myBold-part")}</span></h2>
-            <SearchBox placeholder={t("search-box.placeholder-part")} data={locations}/>
+            <SearchBox placeholder={t("search-box.placeholder-part")} data={locations} />
             <CategoryItem
                 type="Popüler"
                 locations={muzeler}
