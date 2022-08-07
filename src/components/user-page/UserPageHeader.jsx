@@ -11,7 +11,7 @@ const UserPageHeader = (props) => {
     const posts = props.posts
     return (
         <div className="d-flex flex-column position-relative mb-5">
-            <img className="w-100" src={require("../../assets/imgs/account-page-photo.png")} alt="" />
+            <img className="w-100" src={"https://picsum.photos/1600/300"} alt="" />
             <div className="d-flex flex-column  w-100 align-items-center position-absolute my-vertical-align">
                 <img className="avatar" src={userProfilePhoto} alt="" />
                 <p className="text-dark my-font display-3">{userFullName}</p>
