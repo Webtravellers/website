@@ -26,7 +26,6 @@ const HomePage = () => {
 
     locationService.getLocations({}).then((res) => {
       setLocations(res.data.data);
-      console.log(res.data.data)
     });
 
     userService.getUsers().then((res) => {
@@ -45,7 +44,6 @@ const HomePage = () => {
     }
   };
   divideLocations();
-  console.log(users)
   return (
     <div className="d-flex flex-column align-items-center mt-5">
       <div className="d-flex justify-content-center">
