@@ -421,6 +421,16 @@ code {
   opacity: 0.4;
 }
 
+.filter-group {
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.filterMaxHeight {
+  max-height: 20rem;
+}
+
 #routerMap {
   height: 500px;
   width: 500px;
