@@ -24,6 +24,10 @@ class LocationService {
     getLocationComments(id) {
         return api().get(api_url + id + '/comments')
     }
+
+    newCommentAtLocation(id, data) {
+        return api().post(api_url +  id + '/comments', data)
+    }
 }
 
 export default LocationService
