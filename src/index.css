@@ -478,3 +478,8 @@ a.nav-link.active {
   height: 100px;
   border-radius: 50px;
 }
+
+#loader {
+  position: relative;
+  left: 48%;
+}
