@@ -85,11 +85,12 @@ const LocationPage = () => {
                   "& > legend": { mt: 2 },
                 }}
               >
-                <Typography component="legend">Rating</Typography>
+                <Typography component="legend">{t("location-page.reviews")}</Typography>
                 <Rating
                   className="mb-5"
                   name="read-only"
                   value={avgRating ? avgRating : 0}
+                  precision={0.2}
                   readOnly
                 />
               </Box>

@@ -23,6 +23,7 @@ const SignupPage = () => {
     const [loading, setLoading] = useState(false)
 
     const initialFormValues = {
+        username: "",
         name: "",
         lastname: "",
         email: "",
@@ -31,6 +32,7 @@ const SignupPage = () => {
     const validationSchema = Yup.object().shape({
         email: Yup.string().required(`${t("sign-up-page.email-is-required")}`).email(`${t("sign-up-page.not-valid-email")}`),
         password: Yup.string().required(`${t("sign-up-page.password-is-required")}`).min(6, `${t("sign-up-page.password-min-6")}`),
+        username: Yup.string().required(`${t("sign-up-page.is-mandatory")}`).min(6, `${t("sign-up-page.min-6-word")}`).max(16, `${t("sign-up-page.max-16-word")}`),
         name: Yup.string().required(`${t("sign-up-page.is-mandatory")}`).min(3, `${t("sign-up-page.min-3-word")}`).max(16, `${t("sign-up-page.max-16-word")}`),
         lastname: Yup.string().required(`${t("sign-up-page.is-mandatory")}`).min(3, `${t("sign-up-page.min-3-word")}`).max(16, `${t("sign-up-page.max-16-word")}`)
     })
@@ -39,13 +41,13 @@ const SignupPage = () => {
         setLoading(true)
         authService.signup(values).then(res => {
             Swal.fire({
-                title: "Successfull",
+                title: `${t("sign-up-page.successfull")}`,
                 text: res.data.message,
                 icon: "success",
             })
         }).catch(err => {
             Swal.fire({
-                title: "Error",
+                title: `${t("sign-up-page.error")}`,
                 text: err.response.data.message,
                 icon: "error",
             })
@@ -80,6 +82,11 @@ const SignupPage = () => {
                                         <Input className="auth-input" name="lastname" onChange={props.handleChange} placeholder={t("sign-up-page.surname-example")} type="text"></Input>
                                     </InputGroup>
                                     <p className='text-danger error-messages ml-2'>{props.errors.lastname}</p>
+                                    <span className="ml-2 my-2 text-dark">{t("sign-up-page.username")}</span>
+                                    <InputGroup className="m-1">
+                                        <Input className="auth-input" name="username" onChange={props.handleChange} placeholder={t("sign-up-page.username-example")} type="text"></Input>
+                                    </InputGroup>
+                                    <p className='text-danger error-messages ml-2'>{props.errors.username}</p>
                                     <span className="ml-2 my-2 text-dark">{t("sign-up-page.email")}</span>
                                     <InputGroup className="m-1">
                                         <Input className="auth-input" name="email" onChange={props.handleChange} placeholder="blabla@gmail.com" type="email"></Input>

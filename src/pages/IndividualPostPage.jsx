@@ -47,7 +47,7 @@ const IndividualPostPage = () => {
                             time={comment.date}
                             comment={comment.comment}
                         />
-                    )) : <p>There is no comment for this post yet!</p>
+                    )) : <p>{t("individual-post-page.no-comments")}</p>
                 }
             </div>
         </div>

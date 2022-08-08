@@ -7,8 +7,10 @@ import LocationService from "../../services/locationService";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 import LocationPage from "../../pages/LocationPage";
+import { useTranslation } from "react-i18next";
 
 const NewLocationCommentModal = ({ newComment, setNewComment }) => {
+  const { t, i18n } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [comment, setComment] = useState("");
   const [score, setScore] = useState(0);
@@ -45,7 +47,7 @@ const NewLocationCommentModal = ({ newComment, setNewComment }) => {
     >
       <div className="d-flex flex-column ">
         <ModalHeader>
-          <span className="font-medium">Yorum Yap</span>
+          <span className="font-medium">{t("new-comment-modal.leave-a-comment")}</span>
         </ModalHeader>
 
         <ModalBody className="d-flex justify-items-center flex-column modal-w ">
@@ -53,14 +55,14 @@ const NewLocationCommentModal = ({ newComment, setNewComment }) => {
             <div className="py-3">
               <textarea
                 className=""
-                placeholder="Write a comment..."
+                placeholder={t("new-comment-modal.write-a-comment-placeholder")}
                 name="comment"
                 cols="40"
                 rows="12"
                 value={comment}
                 onChange={(val) => setComment(val.target.value)}
               ></textarea>
-              <Typography component="legend">Puan Ver</Typography>
+              <Typography component="legend">{t("new-comment-modal.give-score")}</Typography>
               <Rating
                 name="simple-controlled"
                 size="large"
@@ -75,14 +77,14 @@ const NewLocationCommentModal = ({ newComment, setNewComment }) => {
                   disabled={loading}
                   className="bg-success text-white px-6  rounded  hover:drop-shadow-lg "
                 >
-                  {loading ? "Paylaşılıyor..." : "Paylaş"}
+                  {loading ? `${t("new-comment-modal.sharing")}` : `${t("new-comment-modal.share")}`}
                 </button>
                 <button
                   onClick={() => setNewComment(false)}
                   disabled={loading}
                   className="bg-danger text-white px-6  rounded  hover:drop-shadow-lg "
                 >
-                  İptal
+                  {t("new-comment-modal.cancel")}
                 </button>
               </div>
             </div>

@@ -55,13 +55,13 @@
     },
 
     "location-page": {
-      "rating": "Puan",
-      "facilities": "İmkanlar",
+      "reviews": "Değerlendirmeler",
       "comments": "Diğer kullanıcıların yorumları"
     },
 
     "individual-post-page": {
-      "comments": "Yorumlar"
+      "comments": "Yorumlar",
+      "no-comments": "Bu yazı için henüz bir yorum yok!"
     },
 
     "sign-in-page": {
@@ -86,13 +86,19 @@
       "password-min-6": "Şifre en az 6 karakterden oluşmalıdır",
       "is-mandatory": "Bu alan doldurulması zorunlu",
       "min-3-word": "En az 3 karakterden oluşmalı",
+      "min-6-word": "En az 6 karakterden oluşmalı",
       "max-16-word": "Maksimum karakter sayısı aşıldı (16)",
+
+      "successfull": "Başarılı",
+      "error": "Hata",
 
       "sign-up": "Kayıt Ol",
       "name": "Ad",
       "name-example": "Örnek: Ata",
       "surname": "Soyad",
-      "surname-example": "Örnek: Yılmaz",
+      "surname-example": "Örnek: Yilmaz",
+      "username": "Kullanıcı Adı",
+      "username-example": "Example: atayilmaz007",
       "email": "E-posta",
       "password": "Şifre",
       "password-again": "Şifre tekrar",
@@ -145,5 +151,14 @@
 
     "trips-container": {
       "go-to-trip-button": "Geziye Git"
+    },
+
+    "new-comment-modal": {
+      "leave-a-comment": "Yorum Yap",
+      "cancel": "İptal",
+      "write-a-comment-placeholder": "Yorum yap...",
+      "share": "Paylaş",
+      "sharing": "Paylaşıyor...",
+      "give-score": "Puan Ver"
     }
   }

@@ -55,13 +55,13 @@
     },
 
     "location-page": {
-      "rating": "Rating",
-      "facilities": "Facilities",
+      "reviews": "Reviews",
       "comments": "Comments from other users"
     },
 
     "individual-post-page": {
-      "comments": "Comments"
+      "comments": "Comments",
+      "no-comments": "There are no comments for this post yet!"
     },
 
     "sign-in-page": {
@@ -86,13 +86,19 @@
       "password-min-6": "The password must be at least 6 characters",
       "is-mandatory": "This field is mandatory",
       "min-3-word": "Must have at least 3 characters",
+      "min-6-word": "Must have at least 6 characters",
       "max-16-word": "Maximum number of characters exceeded (16)",
+
+      "successfull": "Successfull",
+      "error": "Error",
 
       "sign-up": "Register",
       "name": "Name",
       "name-example": "Example: Ata",
       "surname": "Last Name",
-      "surname-example": "Example: Yılmaz",
+      "surname-example": "Example: Yilmaz",
+      "username": "Username",
+      "username-example": "Example: atayilmaz007",
       "email": "E-mail",
       "password": "Password",
       "password-again": "Password Again",
@@ -145,6 +151,15 @@
 
     "trips-container": {
       "go-to-trip-button": "Go To Trip"
+    },
+
+    "new-comment-modal": {
+      "leave-a-comment": "Leave a Comment",
+      "cancel": "Cancel",
+      "write-a-comment-placeholder": "Write a Comment...",
+      "share": "Share",
+      "sharing": "Sharing...",
+      "give-score": "Give Score"
     }
 
   }
