@@ -31,7 +31,7 @@ const LocationComment = (props) => {
                 ></i>
               ))}
             </span>
-            4.0
+            {(props.score)}.0
           </h5>
           <p className="Location-comment">{comment}</p>
         </div>
