@@ -10,8 +10,10 @@ import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { Button, Tooltip } from "reactstrap";
 import UserService from "../services/userServices";
 import { useSelector } from "react-redux";
-import BasicRating from "../components/locationRating/BasicRating";
 import NewLocationCommentModal from "../components/comments/NewLocationCommentModal";
+import Box from "@mui/material/Box";
+import Rating from "@mui/material/Rating";
+import Typography from "@mui/material/Typography";
 
 const LocationPage = () => {
   const { t, i18n } = useTranslation();
@@ -19,18 +21,14 @@ const LocationPage = () => {
   const [location, setLocation] = useState({});
   const [cities, setCities] = useState([]);
   const [comments, setComments] = useState(null);
-  const [newComment, setNewComment] = useState(false)
+  const [newComment, setNewComment] = useState(false);
   const userService = new UserService();
   const { user } = useSelector((state) => state.auth);
-  const [users, setUsers] = useState([])
-  let uniqueComments = new Set()
+  const uniqueComments = [];
+  const uniqueScores = [];
 
   useEffect(() => {
     const locationService = new LocationService();
-
-    userService.getUsers().then((res) => {
-      setUsers(res.data.data)
-    })
 
     locationService.getById(id).then((res) => {
       setLocation(res.data.data);
@@ -38,6 +36,7 @@ const LocationPage = () => {
 
     locationService.getLocationComments(id).then((res) => {
       setComments(res.data.data);
+      
     });
 
     const cityService = new CityService();
@@ -53,14 +52,23 @@ const LocationPage = () => {
     }
   });
 
+  let avgRating = 0
+  let sum = 0
+  if (comments !== null) {
+    comments.forEach((comment) => {
+      if (!uniqueComments.includes(comment.user._id)) {
+        uniqueComments.push(comment.user._id);
+        uniqueScores.push(comment.score);
+        sum = uniqueScores.reduce((a, b) => a + b, 0);
+        avgRating = sum / uniqueComments.length
+      }
+    });
+  }
+
   const handleFavoiteList = () => {
     userService.addToFavoriteList(user._id, id);
   };
-  
-  comments.forEach((comment) => {
-    if (comment.user ==)
-  })
-  
+
   return (
     <div className="d-flex flex-column align-items-center mt-5">
       <div className="w-75 mh-25 m-5">
@@ -72,12 +80,24 @@ const LocationPage = () => {
               {currentCity ? currentCity.cityName : null}
             </p>
             <div className="d-flex">
-              <BasicRating currentRating={0}/>
+              <Box
+                sx={{
+                  "& > legend": { mt: 2 },
+                }}
+              >
+                <Typography component="legend">Rating</Typography>
+                <Rating
+                  className="mb-5"
+                  name="read-only"
+                  value={avgRating ? avgRating : 0}
+                  readOnly
+                />
+              </Box>
             </div>
           </div>
           <div className="d-flex flex-column m-1">
             <Button disabled={!user} onClick={() => handleFavoiteList()}>
-              <BookmarkAddIcon/>
+              <BookmarkAddIcon />
             </Button>
           </div>
         </div>
@@ -94,7 +114,7 @@ const LocationPage = () => {
         ></NewLocationCommentModal>
         {comments?.map((comment) => (
           <LocationComment
-            key = {comment._id}
+            key={comment._id}
             firstname={comment.user.name}
             lastname={comment.user.lastname}
             comment={comment.comment}

@@ -31,6 +31,7 @@ const NewLocationCommentModal = ({ newComment, setNewComment }) => {
         toast.error(err.response.data.message);
       })
       .finally(() => {
+        setScore("")
         setComment("");
         setNewComment(false);
         setLoading(false);
