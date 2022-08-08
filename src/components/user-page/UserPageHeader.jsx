@@ -1,8 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 
 
 const UserPageHeader = (props) => {
+    const navigate = useNavigate()
     const { t, i18n } = useTranslation();
     const userProfilePhoto = props.userProfilePhoto
     const followers = props.followers
@@ -15,6 +17,7 @@ const UserPageHeader = (props) => {
             <div className="d-flex flex-column  w-100 align-items-center position-absolute my-vertical-align">
                 <img className="avatar" src={userProfilePhoto} alt="" />
                 <p className="text-dark my-font display-3">{userFullName}</p>
+                <small onClick={() => navigate("favorites")} >See {userFullName}'s favorites!</small>
                 <div className="d-flex">
                     <div className="d-flex flex-column  m-2 align-items-center">
                         <p className="my-font display-5">{followers}</p>

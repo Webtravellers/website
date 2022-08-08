@@ -480,7 +480,7 @@ a.nav-link.active {
 }
 
 .post{
-  width: 45rem;
+  width: 50rem;
   height: auto;
   background: #fff;
   border: 1px solid #dfdfdf;
@@ -553,3 +553,7 @@ a.nav-link.active {
   font-size: 12px;
 }
 
+#loader {
+  position: relative;
+  left: 48%;
+}

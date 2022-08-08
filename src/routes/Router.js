@@ -19,6 +19,7 @@ import MapView from '../components/map/MapView'
 import MapRouteView from '../components/map/MapRouteView'
 import TripMapView from '../components/trip-page/TripMapView'
 import Memories from '../pages/Memories'
+import FavoritesPage from '../pages/user/FavoritesPage'
 const AdminRouter = React.lazy(() => import("./AdminRouter"))
 
 const Router = () => {
@@ -38,6 +39,7 @@ const Router = () => {
                 {/*Giriş yapmış tüm kullanıcıların erişebileceği linkler */}
                 <Route element={<ProtectedRoute roles={Object.values(ROLES)} />}>
                     <Route exact path='bi/:id' element={<AccountPage />} />
+                    <Route exact path='bi/:id/favorites' element={<FavoritesPage />} />
                     <Route exact path='bi/:id/update' element={<UpdateUserInfo />} />
                     <Route exact path='bi/:id/trips' element={<TripsPage />} />
                     <Route exact path='bi/:id/trips/:tripId' element={<TripPage />} />
