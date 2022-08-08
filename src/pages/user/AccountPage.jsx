@@ -24,6 +24,7 @@ const AccountPage = () => {
 
     userService.getUserById(String(userId)).then((res) => {
       setUser(res.data.data);
+      console.log(user);
     });
     postService.getPostsByUser(String(userId)).then((res) => {
       setPosts(res.data.data);

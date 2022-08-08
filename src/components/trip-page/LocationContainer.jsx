@@ -8,7 +8,6 @@ const LocationContainer = (props) => {
     const photo = props.photo
     const desc = props.desc
     const id = props.id
-    console.log(id);
     return (
         <Card className="m-1 p-2"
             style={{
