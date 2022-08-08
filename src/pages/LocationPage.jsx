@@ -14,6 +14,7 @@ import NewLocationCommentModal from "../components/comments/NewLocationCommentMo
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
+import { toast } from "react-toastify";
 
 const LocationPage = () => {
   const { t, i18n } = useTranslation();
@@ -36,7 +37,7 @@ const LocationPage = () => {
 
     locationService.getLocationComments(id).then((res) => {
       setComments(res.data.data);
-      
+
     });
 
     const cityService = new CityService();
@@ -66,7 +67,15 @@ const LocationPage = () => {
   }
 
   const handleFavoiteList = () => {
-    userService.addToFavoriteList(user._id, id);
+    userService.addToFavoriteList(user._id, id).then(res => {
+      console.log(res.data)
+      toast.success(res.data.message);
+    })
+      .catch(err => {
+        console.log(err.response.data)
+        toast.error(err.response.data.message);
+      })
+
   };
 
   return (
