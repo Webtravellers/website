@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import UserService from "../services/userServices";
 
 const PostInFeed = (props) => {
   const postPhoto = props.postPhoto;
   const caption = props.caption;
   const likes = props.likes;
-  const postDate = props.postDate;
-  const id = props.id;
+  const postDate = new Date(props.postDate).toLocaleDateString()
+  const id = props.id._id;
   const userService = new UserService();
   const [currentUser, setCurrentUser] = useState({});
-  const date = new Date()
+  const navigate = useNavigate()
 
-  console.log(postDate.getYear)
 
   useEffect(() => {
     userService.getUserById(id).then((res) => {
@@ -23,7 +23,7 @@ const PostInFeed = (props) => {
       <div class="post d-flex flex-column justify-content-center align-items-center">
         <div class="info">
           <div class="user d-flex">
-            <div class="profile-pic flex-column justify-content-center">
+            <div onClick={() => navigate(`/bi/${id}`)} class="profile-pic flex-column justify-content-center">
               <img src={currentUser.photo} alt="profile pic" />
             </div>
             <div className="username flex-column justify-content-center">

@@ -22,16 +22,19 @@ const Memories = () => {
       next={() => setSkip((s) => s + 10)}
       hasMore={!isEnd}
     >
-      {posts?.map((post) => (
-        <PostInFeed
-          key={post._id}
-          postPhoto={post.photo}
-          caption={post.caption}
-          likes={post.likes}
-          postDate={post.createdAt}
-          id={post.postedBy._id}
-        />
-      ))}
+      {posts?.map((post) => {
+        console.log(post);
+        return (
+          <PostInFeed
+            key={post._id}
+            postPhoto={post.photo}
+            caption={post.caption}
+            likes={post.likes}
+            postDate={post.createdAt}
+            id={post.postedBy}
+          />
+        )
+      })}
     </InfiniteScroll>
   );
 };

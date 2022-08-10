@@ -11,9 +11,12 @@ class UserService {
     }
 
     addToFavoriteList(id, locaitonId) {
-        return api().post(`${url}/${id}/favorites/${locaitonId}`)
+        return api().post(`${url}${id}/favorites/${locaitonId}`)
     }
 
+    handleFollow(id, data) {
+        return api().post(`${url}${id}/follows/`, data)
+    }
 }
 
 export default UserService
