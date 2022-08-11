@@ -15,10 +15,12 @@ const DiscoverPage = () => {
     const muzeler = []
     useEffect(() => {
         const locationService = new LocationService()
-        locationService.getLocations({}).then(res => {
+        locationService.getDiscoverLocations({}).then(res => {
             setLocations(res.data.data)
         })
     }, [])
+
+    console.log(locations)
 
     const divideLocations = () => {
         for (let i = 0; i <= locations.length; i++) {

@@ -1,6 +1,11 @@
 import api from './api'
 const api_url = "locations/"
 class LocationService {
+    
+    getDiscoverLocations() {
+        return api().get(api_url + "food")
+    }
+
     getLocations(filter) {
         return api().get(api_url + `?page=${filter.page??1}&size=${filter.size??20}&city=${filter.cities??""}&types=${filter.types??""}`)
     }
