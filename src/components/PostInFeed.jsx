@@ -4,14 +4,15 @@ import UserService from "../services/userServices";
 
 const PostInFeed = (props) => {
   const postPhoto = props.postPhoto;
+  const postId = props.postId
   const caption = props.caption;
   const likes = props.likes;
   const postDate = new Date(props.postDate).toLocaleDateString()
-  const id = props.id._id;
+  const id = props.postedBy._id;
   const userService = new UserService();
   const [currentUser, setCurrentUser] = useState({});
   const navigate = useNavigate()
-
+  console.log(postId);
 
   useEffect(() => {
     userService.getUserById(id).then((res) => {
@@ -31,7 +32,7 @@ const PostInFeed = (props) => {
             </div>
           </div>
         </div>
-        <img src={postPhoto} class="post-image" alt="cover" />
+        <img onClick={() => navigate(`/bi/${id}/posts/${postId}`)} src={postPhoto} class="post-image" alt="cover" />
         <div class="post-content">
           <p class="likes">{likes.length} Likes</p>
           <p class="description">{caption}</p>

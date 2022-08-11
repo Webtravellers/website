@@ -27,11 +27,12 @@ const Memories = () => {
         return (
           <PostInFeed
             key={post._id}
+            postId={post._id}
             postPhoto={post.photo}
             caption={post.caption}
             likes={post.likes}
             postDate={post.createdAt}
-            id={post.postedBy}
+            postedBy={post.postedBy}
           />
         )
       })}
