@@ -563,3 +563,14 @@ a.nav-link.active {
 img {
   object-fit: cover;
 }
+
+.lazyBody {
+  position: relative;
+}
+
+.lazyLoading {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

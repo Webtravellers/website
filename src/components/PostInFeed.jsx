@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import UserService from "../services/userServices";
 import { useTranslation, Trans } from "react-i18next";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Lazy from "../hoc/Lazy";
 
 const PostInFeed = (props) => {
   const { t, i18n } = useTranslation();
@@ -14,7 +16,6 @@ const PostInFeed = (props) => {
   const userService = new UserService();
   const [currentUser, setCurrentUser] = useState({});
   const navigate = useNavigate()
-  console.log(postId);
 
   useEffect(() => {
     userService.getUserById(id).then((res) => {
@@ -27,14 +28,14 @@ const PostInFeed = (props) => {
         <div class="info">
           <div class="user d-flex">
             <div onClick={() => navigate(`/bi/${id}`)} class="profile-pic flex-column justify-content-center">
-              <img src={currentUser.photo} alt="profile pic" />
+              <LazyLoadImage effect="blur" src={currentUser.photo} alt="profile pic" />
             </div>
             <div className="username flex-column justify-content-center">
               {currentUser.username ?? currentUser.name}
             </div>
           </div>
         </div>
-        <img onClick={() => navigate(`/bi/${id}/posts/${postId}`)} src={postPhoto} class="post-image" alt="cover" />
+        <Lazy effect="blur" onClick={() => navigate(`/bi/${id}/posts/${postId}`)} src={postPhoto} class="post-image" alt="cover" />
         <div class="post-content">
           <p class="likes">{likes.length} {t("post-in-feed.likes")}</p>
           <p class="description">{caption}</p>

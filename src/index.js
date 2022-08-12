@@ -8,7 +8,7 @@ import './assets/scss/dijitalAsistan.scss'
 import { Provider } from 'react-redux';
 import { configureStore } from './store/configureStore';
 import './i18n';
-
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const root = ReactDOMClient.createRoot(document.getElementById("root"));
 const store = configureStore()
