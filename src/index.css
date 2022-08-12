@@ -573,4 +573,16 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 1s infinite;
+  opacity: 0.2;
+  background-color: grey;
+}
+
+@keyframes fadeIn {
+  from {
+  	opacity: 0;
+  }
+  to {
+ 	opacity: 0.2;
+  }
 }

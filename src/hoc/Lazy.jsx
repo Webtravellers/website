@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import LazyLoading from "../components/LazyLoading";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Lazy = ({ ...props }) => {
   const ref = useRef();
