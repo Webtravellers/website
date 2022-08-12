@@ -6,7 +6,8 @@ import UserService from "../../services/userServices";
 import UpdateInfoService from "../../services/updateInfoService";
 import MainScreen from "../../components/updateUserScreen/MainScreen";
 import { useTranslation } from "react-i18next";
-
+import { useDispatch } from "react-redux";
+import { SaveUser } from "../../store/actions/userActions";
 
 const UpdateUserInfo = () => {
   const { t, i18n } = useTranslation();
@@ -22,14 +23,17 @@ const UpdateUserInfo = () => {
 
   const [photoPreview, setPhotoPreview] = useState("");
   const [dragged, setDragged] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const userService = new UserService();
 
     userService.getUserById(String(userId)).then((res) => {
       setUser(res.data.data);
+      if (!loading)
+        dispatch(SaveUser(res.data.data))
     });
-  }, []);
+  }, [loading]);
 
   const handleDragChange = () => {
     setDragged(!dragged);
@@ -150,7 +154,9 @@ const UpdateUserInfo = () => {
                         fill="currentColor"
                       ></path>
                     </svg>
-                    <Label>{t("update-user-info-page.change-profile-photo")}</Label>
+                    <Label>
+                      {t("update-user-info-page.change-profile-photo")}
+                    </Label>
                     <Input
                       onChange={handleFileChange}
                       accept="image/*"
