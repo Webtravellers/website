@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 function ForgottenFlavorsCard(props) {
+  const navigate = useNavigate()
   return (
-    <div className="forgotten-flavors-card d-flex flex-column">
+    <div onClick={() => navigate(`/location/${props.id}`)} className="forgotten-flavors-card d-flex flex-column cursor-pointer">
         <div>
             <img className="forgotten-flavors-card-img" src={props.photos[0]} alt='yemek' />
         </div>

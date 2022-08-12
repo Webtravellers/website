@@ -481,12 +481,13 @@ a.nav-link.active {
 }
 
 .post {
-  width: 50rem;
+  padding-top: 1rem;
   height: auto;
   background: #fff;
   border: 1px solid #dfdfdf;
   margin-top: 40px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .info {
@@ -527,7 +528,6 @@ a.nav-link.active {
 .post-image {
   width: 34.9rem;
   height: 34.9rem;
-  border-radius: 1.5rem;
 }
 
 .post-content {

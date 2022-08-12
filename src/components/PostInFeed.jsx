@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import UserService from "../services/userServices";
+import { useTranslation, Trans } from "react-i18next";
 
 const PostInFeed = (props) => {
+  const { t, i18n } = useTranslation();
   const postPhoto = props.postPhoto;
   const postId = props.postId
   const caption = props.caption;
@@ -34,7 +36,7 @@ const PostInFeed = (props) => {
         </div>
         <img onClick={() => navigate(`/bi/${id}/posts/${postId}`)} src={postPhoto} class="post-image" alt="cover" />
         <div class="post-content">
-          <p class="likes">{likes.length} Likes</p>
+          <p class="likes">{likes.length} {t("post-in-feed.likes")}</p>
           <p class="description">{caption}</p>
           <p class="post-time">{postDate}</p>
         </div>

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ForgottenFlavorsCard from "./ForgottenFlavorsCard";
-import forgottenFlavors from "./forgottenFlavors";
 import LocationService from "../../services/locationService";
 
 function createCard(flavor) {
     return(
         <ForgottenFlavorsCard 
         key = {flavor._id}
+        id = {flavor._id}
         name = {flavor.name}
         photos = {flavor.photos}
         type = {flavor.foodType}

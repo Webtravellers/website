@@ -12,7 +12,7 @@ const Memories = () => {
   useEffect(() => {
     postService.getAllPosts(skip).then((res) => {
       if (res.data.data === []) setIsEnd(true);
-      setPosts([...posts, ...res.data.data]);
+      setPosts([...posts, ...res.data.data].reverse());
     });
   }, [skip]);
 
@@ -23,7 +23,6 @@ const Memories = () => {
       hasMore={!isEnd}
     >
       {posts?.map((post) => {
-        console.log(post);
         return (
           <PostInFeed
             key={post._id}

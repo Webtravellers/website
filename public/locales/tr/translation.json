@@ -160,5 +160,9 @@
       "share": "Paylaş",
       "sharing": "Paylaşıyor...",
       "give-score": "Puan Ver"
+    },
+
+    "post-in-feed": {
+      "likes": "Beğeni"
     }
   }

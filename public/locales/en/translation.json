@@ -160,6 +160,10 @@
       "share": "Share",
       "sharing": "Sharing...",
       "give-score": "Give Score"
+    },
+
+    "post-in-feed": {
+      "likes": "Likes"
     }
 
   }
