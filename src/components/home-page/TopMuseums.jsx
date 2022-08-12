@@ -16,7 +16,7 @@ const TopMuseums = () => {
     const muzeler = []
     useEffect(() => {
         const locationService = new LocationService()
-        locationService.getLocations({}).then(res => {
+        locationService.getLocations({size:100}).then(res => {
             setLocations(res.data.data)
         })
     }, [])

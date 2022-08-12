@@ -15,8 +15,9 @@ function UserInfo(props) {
           navigate("/account");
         }}
         className="userInfoIMG cursor-pointer"
-        src={require("../../assets/imgs/user-account-photo.png")}
+        src="https://cdn.yeniakit.com.tr/images/news/625/kun-ata-kim-kun-ata-rolunu-kim-oynuyor-h1638012805-a8c35c.jpg"
         alt=""
+
       />
       <div className="d-flex flex-column">
         <p
@@ -25,7 +26,7 @@ function UserInfo(props) {
           }}
           className="text-dark my-font cursor-pointer"
         >
-          Emma Stone
+          Ata Kim
         </p>
         <p>{date}</p>
       </div>

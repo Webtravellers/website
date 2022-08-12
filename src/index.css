@@ -322,9 +322,10 @@ a.nav-link.active {
 }
 
 .userInfoIMG {
-  width: 20%;
-  height: 20%;
-  padding-left: 4%;
+  width: 5rem;
+  height: 5rem;
+  margin-left: 4%;
+  border-radius: 50%;
 }
 
 .forgotten-flavors-home-page {
