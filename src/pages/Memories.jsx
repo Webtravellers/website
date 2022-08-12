@@ -12,10 +12,10 @@ const Memories = () => {
   useEffect(() => {
     postService.getAllPosts(skip).then((res) => {
       if (res.data.data === []) setIsEnd(true);
-      setPosts([...posts, ...res.data.data].reverse());
+      setPosts([...posts, ...res.data.data?.reverse()]);
     });
   }, [skip]);
-
+  
   return (
     <InfiniteScroll
       dataLength={posts.length}
