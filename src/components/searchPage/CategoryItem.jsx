@@ -9,18 +9,17 @@ const CategoryItem = (props) => {
 
   const navigate = useNavigate();
   const categoryType = props.type;
-  const locs = props.locations.slice(0,5);
-  console.log(locs);
+  const locs = props.locations.filter(x => x?._id).slice(0,5);
   return (
     <div className="d-flex flex-column m-5">
       <h4 className="ml-5 myBold">{t(`discover-page.${categoryType}`)}</h4>
       <div className="d-flex">
-        {locs.map(location => (
+        {locs?.map(location => (
           <LocationCard
-            key={location._id}
-            id={location._id}
-            photo={location.photos[0]}
-            name={location.name}
+            key={location?._id}
+            id={location?._id}
+            photo={location?.photos[0]}
+            name={location?.name}
           />
         ))}
       </div>
