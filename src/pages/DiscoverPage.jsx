@@ -20,7 +20,6 @@ const DiscoverPage = () => {
         })
     }, [])
 
-    console.log(locations)
 
     const divideLocations = () => {
         for (let i = 0; i <= locations.length; i++) {

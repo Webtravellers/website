@@ -2,6 +2,7 @@ import React from "react";
 import img3 from "../assets/imgs/img3.png";
 import { Table } from "reactstrap";
 
+
 const AboutUsPage = () => {
   return (
     <Table>
