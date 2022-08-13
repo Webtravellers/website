@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "reactstrap";
 import UserPageHeader from "../../components/user-page/UserPageHeader";
-import { useNavigate, useParams } from "react-router";
+import { useLocation, useNavigate, useParams } from "react-router";
 import NewPost from "../../components/user-page/NewPost";
 import { useSelector } from "react-redux";
 import UserService from "../../services/userServices";
@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 
 
 const AccountPage = () => {
+  const location = useLocation()
   const [loading, setLoading] = useState(false)
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
@@ -42,23 +43,24 @@ const AccountPage = () => {
     postService.getPostsByUser(String(userIdFromUrl)).then((res) => {
       setPosts(res.data.data);
     });
-  }, []);
+  }, [location]);
 
   const handleFollowOperation = () => {
     userService.handleFollow(userId, { userToFollow: userIdFromUrl }).then(res => {
       toast.success(res.data.message);
+      userService.getUserById(String(userIdFromUrl)).then((res) => {
+        setUser(res.data.data);
+        setFollowers(res.data.data.followers.length)
+        setFollowings(res.data.data.followings.length)
+
+
+      });
     })
       .catch(err => {
         toast.error(err.response.data.message);
       })
 
-    userService.getUserById(String(userIdFromUrl)).then((res) => {
-      setUser(res.data.data);
-      setFollowers(res.data.data.followers.length)
-      setFollowings(res.data.data.followings.length)
 
-
-    });
   }
   return (
     <div>
@@ -95,7 +97,7 @@ const AccountPage = () => {
                       {
                         <Button
                           onClick={() => handleFollowOperation()}
-                          className=""
+                          color={user?.followers?.includes(userId) ? "danger" : "info"}
                         >
                           {user?.followers?.includes(userId) ? <span>Unfollow</span> : <span>Follow</span>}
                         </Button>
