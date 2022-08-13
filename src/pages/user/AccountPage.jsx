@@ -36,12 +36,12 @@ const AccountPage = () => {
       setUser(res.data.data);
       setFollowers(res.data.data.followers?.length ?? 0)
       setFollowings(res.data.data.followings?.length ?? 0)
+      setLoading(false)
 
     });
     postService.getPostsByUser(String(userIdFromUrl)).then((res) => {
       setPosts(res.data.data);
     });
-    setLoading(false)
   }, []);
 
   const handleFollowOperation = () => {
@@ -56,6 +56,7 @@ const AccountPage = () => {
       setUser(res.data.data);
       setFollowers(res.data.data.followers.length)
       setFollowings(res.data.data.followings.length)
+
 
     });
   }
